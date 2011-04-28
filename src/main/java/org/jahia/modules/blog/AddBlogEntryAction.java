@@ -34,7 +34,7 @@ public class AddBlogEntryAction extends Action {
             node = node.getNode("blog-posts");
         }
 
-        JCRNodeWrapper newNode = createNode(req, parameters, node, "jnt:blogPost","");
+        JCRNodeWrapper newNode = createNode(req, parameters, node, "jnt:blogPost","", false);
         jcrSessionWrapper.save();
         return new ActionResult(HttpServletResponse.SC_OK, newNode.getPath(), Render.serializeNodeToJSON(newNode));
     }
