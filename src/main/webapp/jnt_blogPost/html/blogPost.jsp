@@ -32,10 +32,10 @@
 <c:if test="${jcr:hasPermission(currentNode,'jcr:removeNode')}">
     <form action="<c:url value='${url.base}${currentNode.path}'/>" method="post"
           id="jahia-blog-article-delete-${currentNode.UUID}">
-        <input type="hidden" name="redirectTo" value="<c:url value='${url.base}${jcr:getParentOfType(renderContext.mainResource.node, "jnt:page").path}'/>"/>
-            <%-- Define the output format for the newly created node by default html or by redirectTo--%>
-        <input type="hidden" name="newNodeOutputFormat" value="html"/>
-        <input type="hidden" name="methodToCall" value="delete"/>
+        <input type="hidden" name="jcrRedirectTo" value="<c:url value='${url.base}${jcr:getParentOfType(renderContext.mainResource.node, "jnt:page").path}'/>"/>
+            <%-- Define the output format for the newly created node by default html or by jcrRedirectTo--%>
+        <input type="hidden" name="jcrNewNodeOutputFormat" value="html"/>
+        <input type="hidden" name="jcrMethodToCall" value="delete"/>
     </form>
 </c:if>
 

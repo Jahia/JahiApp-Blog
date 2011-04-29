@@ -28,8 +28,8 @@
 </uiComponents:ckeditor>
 
     <form id="formPost" method="post" action="${renderContext.mainResource.node.name}/" name="blogPost">
-        <input type="hidden" name="autoCheckin" value="true">
-        <input type="hidden" name="nodeType" value="jnt:blogPost">
+        <input type="hidden" name="jcrAutoCheckin" value="true">
+        <input type="hidden" name="jcrNodeType" value="jnt:blogPost">
         <fmt:formatDate value="${created.time}" type="date" pattern="dd" var="userCreatedDay"/>
         <fmt:formatDate value="${created.time}" type="date" pattern="mm" var="userCreatedMonth"/>
         <p class="post-info"><fmt:message key="blog.label.by"/> <a href="<c:url value='${url.base}${functions:lookupUser(createdBy.string).localPath}.html'/>">${createdBy.string}</a>

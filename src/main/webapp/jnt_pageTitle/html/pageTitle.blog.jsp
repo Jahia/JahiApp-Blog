@@ -56,8 +56,8 @@
         </span>
         <div style="display:none">
             <form id="formPageEdit" method="post" action="${pageNode.name}/" name="blogPage">
-            <input type="hidden" name="autoCheckin" value="true">
-            <input type="hidden" name="nodeType" value="jnt:page">
+            <input type="hidden" name="jcrAutoCheckin" value="true">
+            <input type="hidden" name="jcrNodeType" value="jnt:page">
                 <p>
                     <label for="title"><fmt:message key="title"/>: </label>
                     <input id="title" type="text" value="<c:out value='${pageNode.properties["jcr:title"].string}'/>" name="jcr:title"/>

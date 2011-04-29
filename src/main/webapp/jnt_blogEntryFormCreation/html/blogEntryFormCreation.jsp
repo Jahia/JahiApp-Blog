@@ -29,9 +29,9 @@
 
     <template:tokenizedForm>
         <form id="formPost" method="post" action="${renderContext.mainResource.node.name}.addBlogEntry.do" name="blogPost">
-            <input type="hidden" name="nodeType" value="jnt:blogPost"/>
-            <input type="hidden" name="normalizeNodeName" value="true"/>
-            <input type="hidden" name="parentType" value="jnt:blogPosts"/>
+            <input type="hidden" name="jcrNodeType" value="jnt:blogPost"/>
+            <input type="hidden" name="jcrNormalizeNodeName" value="true"/>
+            <input type="hidden" name="jcrParentType" value="jnt:blogPosts"/>
             <fmt:formatDate value="${created.time}" type="date" pattern="dd" var="userCreatedDay"/>
             <fmt:formatDate value="${created.time}" type="date" pattern="MMM" var="userCreatedMonth"/>
             <p class="post-info"><fmt:message key="blog.label.by"/> ${createdBy.string}

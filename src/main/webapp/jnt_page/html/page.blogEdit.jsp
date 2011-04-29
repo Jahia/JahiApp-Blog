@@ -12,9 +12,9 @@
 <template:addResources type="css" resources="blog.css"/>
 <div class="grid_10  alpha omega">
 <form method="post" action="${currentNode.name}/" name="blogPost">
-    <input type="hidden" name="autoCheckin" value="true"/>
-    <input type="hidden" name="nodeType" value="jnt:blogPost"/>
-    <input type="hidden" name="normalizeNodeName" value="true"/>
+    <input type="hidden" name="jcrAutoCheckin" value="true"/>
+    <input type="hidden" name="jcrNodeType" value="jnt:blogPost"/>
+    <input type="hidden" name="jcrNormalizeNodeName" value="true"/>
     <fmt:formatDate value="${created.time}" type="date" pattern="dd" var="userCreatedDay"/>
     <fmt:formatDate value="${created.time}" type="date" pattern="mm" var="userCreatedMonth"/>
     <div class="post-date"><span>${userCreatedMonth}</span>${userCreatedDay}</div>
