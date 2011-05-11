@@ -8,8 +8,6 @@
                 <createNewBlog jcr:primaryType="jnt:permission"/>
                 <addBlogEntry jcr:primaryType="jnt:permission"/>
                 <editBlogEntry jcr:primaryType="jnt:permission"/>
-                <testEditBlogEntry jcr:primaryType="jnt:permission"/>
-                <test21EditBlogEntry jcr:primaryType="jnt:permission"/>
             </blog>
         </actions>
     </permissions>
