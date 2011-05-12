@@ -67,7 +67,7 @@
                         </last-comments>
                     </row-col2>
                     <illustration jcr:primaryType="jnt:contentList">
-                        <illustration j:allowedTypes="jnt:imageReference" j:level="1" jcr:primaryType="jnt:levelAbsoluteArea" />
+                        <illustration j:allowedTypes="jnt:imageReference" j:level="1" jcr:primaryType="jnt:absoluteArea" />
                     </illustration>
                 </blog>
                 <blog-edit j:applyOn="jnt:blogPost" j:priority="10" j:requiredPermissions="/permissions/actions/blog/editBlogEntry" jcr:primaryType="jnt:contentTemplate">
