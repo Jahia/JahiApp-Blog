@@ -67,6 +67,7 @@
                         <facets j:bindedComponent="/templateSets/blog/templates/blog/row-col1/blog-list/blog-posts" j:expiration="900" j:perUser="false" j:view="javascripttagcloud" jcr:mixinTypes="jmix:cache jmix:renderable" jcr:primaryType="jnt:facets">
                             <fieldFacet facet="tags" field="jmix:tagged;j:tags" jcr:primaryType="jnt:fieldFacet" limit="100" mincount="1" missing="false" offset="0" sort="true">
                                 <j:translation_en jcr:language="en" jcr:primaryType="jnt:translation" label="Tags" />
+                                <j:translation_fr jcr:language="fr" jcr:primaryType="jnt:translation" label="Tags" />
                             </fieldFacet>
                         </facets>
                         <last-comments j:skin="skins.box8" j:style="grey" jcr:mixinTypes="jmix:skinnable jmix:style" jcr:primaryType="jnt:contentList">
@@ -87,6 +88,7 @@
                         <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Blog edit" />
                         <edit j:requireLoggedUser="false" j:requiredMode="live" jcr:mixinTypes="jmix:requiredPermissions" jcr:primaryType="jnt:blogEntryFormEdition">
                             <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Edit" />
+                            <j:translation_fr jcr:language="fr" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Editer" />
                         </edit>
                         <j:translation_fr jcr:language="fr" jcr:primaryType="jnt:translation" jcr:title="Blog révision"/>
                     </row-col1>
