@@ -9,7 +9,7 @@
                     </pagecontent>
                     <row-col1 j:style="black" jcr:mixinTypes="jmix:style" jcr:primaryType="jnt:contentList">
                         <j:translation_en jcr:language="en" jcr:primaryType="jnt:translation" />
-                        <create-new-blog j:skin="skins.box8" j:style="blue" jcr:mixinTypes="jmix:skinnable jmix:style" jcr:primaryType="jnt:contentList">
+                        <create-new-blog j:skin="skins.box8" j:style="blue" jcr:mixinTypes="jmix:skinnable jmix:style jmix:requiredPermissions" jcr:primaryType="jnt:contentList" j:requireLoggedUser="true" j:requiredMode="live" j:requiredPermissions="/permissions/actions/blog/createNewBlog">
                             <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Create new blog" />
                             <new-blog j:requireLoggedUser="true" j:requiredMode="live" j:requiredPermissions="/permissions/actions/blog/createNewBlog" jcr:mixinTypes="jmix:requiredPermissions" jcr:primaryType="jnt:pageFormCreation" templateNode="/templateSets/blog/templates/blog" useDescription="true" i18npages="false">
                                 <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="New Blog" buttonLabel="Create new blog"/>
