@@ -11,11 +11,11 @@
                         <j:translation_en jcr:language="en" jcr:primaryType="jnt:translation" />
                         <create-new-blog j:skin="skins.box8" j:style="blue" jcr:mixinTypes="jmix:skinnable jmix:style" jcr:primaryType="jnt:contentList">
                             <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Create new blog" />
-                            <new-blog buttonLabel="create" j:requireLoggedUser="true" j:requiredMode="live" j:requiredPermissions="/permissions/actions/blog/createNewBlog" jcr:mixinTypes="jmix:requiredPermissions" jcr:primaryType="jnt:pageFormCreation" templateNode="/templateSets/blog/templates/blog" useDescription="true" i18npages="false">
-                                <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="New Blog" />
-                                <j:translation_fr jcr:language="fr" jcr:primaryType="jnt:translation" jcr:title="Nouveaux blog"/>
+                            <new-blog j:requireLoggedUser="true" j:requiredMode="live" j:requiredPermissions="/permissions/actions/blog/createNewBlog" jcr:mixinTypes="jmix:requiredPermissions" jcr:primaryType="jnt:pageFormCreation" templateNode="/templateSets/blog/templates/blog" useDescription="true" i18npages="false">
+                                <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="New Blog" buttonLabel="Create new blog"/>
+                                <j:translation_fr jcr:language="fr" jcr:primaryType="jnt:translation" jcr:title="Nouveaux blog" buttonLabel="Créer un nouveau blog"/>
                             </new-blog>
-                            <j:translation_fr jcr:language="fr" jcr:primaryType="jnt:translation" jcr:title="Créer un nouveaux blog"/>
+                            <j:translation_fr jcr:language="fr" jcr:primaryType="jnt:translation" jcr:title="Créer un nouveau blog"/>
                         </create-new-blog>
                         <newestBlog j:expiration="900" j:perUser="false" j:requireLoggedUser="false" j:requiredMode="live" j:skin="skins.box8" j:style="grey" j:subNodesView="blogList" jcr:mixinTypes="jmix:style jmix:cache jmix:requiredPermissions jmix:skinnable" jcr:primaryType="jnt:latestBlog">
                             <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Newly created blog" />

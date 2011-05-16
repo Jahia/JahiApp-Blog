@@ -6,7 +6,8 @@
 + * (jnt:blogPost) = jnt:blogPost
 
 [jnt:blogPost] > jnt:content, mix:title, jmix:tagged, jmix:comments
- - text (string, richtext) i18n
+ - jcr:title (string) mandatory boost=2.0
+ - text (string, richtext)
  + * (jnt:file)
 
 [jnt:blogEntryFormCreation] > jnt:content, jmix:blogContent, mix:title, jmix:studioOnly
