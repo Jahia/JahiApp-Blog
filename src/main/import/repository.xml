@@ -48,11 +48,13 @@
                             <displayMetadata categories="false" creationdate="false" creator="false" description="true" j:bindedComponent="/templateSets/blog/templates/blog" j:view="raw" jcr:mixinTypes="jmix:renderable" jcr:primaryType="jnt:displayMetadata" keywords="false" lastcontributor="false" lastmodification="false" />
                             <j:translation_fr jcr:language="fr" jcr:primaryType="jnt:translation" jcr:title="intro"/>
                         </intro>
+                        <pager displayPager="true" j:bindedComponent="/templateSets/blog/templates/blog/row-col1/blog-list/blog-posts" jcr:primaryType="jnt:pager" pageSize="10"/>
                         <blog-list j:skin="skins.box8" j:style="blue" jcr:mixinTypes="jmix:style jmix:skinnable" jcr:primaryType="jnt:contentList">
                             <j:translation_en jcr:language="en" jcr:primaryType="jnt:translation" jcr:title="Blog List" />
                             <blog-posts firstDirection="desc" firstField="jcr:created" j:allowedTypes="jnt:blogPost" j:requiredMode="live" j:subNodesView="short" jcr:mixinTypes="jmix:orderedList jmix:requiredPermissions" jcr:primaryType="jnt:area" secondDirection="asc" thirdDirection="asc" />
                             <j:translation_fr jcr:language="fr" jcr:primaryType="jnt:translation" jcr:title="Liste des articles"/>
                         </blog-list>
+                        <pager-1 displayPager="true" j:bindedComponent="/templateSets/blog/templates/blog/row-col1/blog-list/blog-posts" jcr:primaryType="jnt:pager" pageSize="10"/>
                         <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Blog List" />
                     </row-col1>
                     <row-col2 jcr:mixinTypes="jmix:style" jcr:primaryType="jnt:contentList">
