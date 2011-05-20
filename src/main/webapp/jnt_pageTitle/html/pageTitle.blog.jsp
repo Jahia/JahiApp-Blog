@@ -45,6 +45,16 @@
         </c:otherwise>
     </c:choose>
 </c:if>
+<c:if test="${jcr:hasPermission(currentNode,'jcr:removeNode')}">
+<template:tokenizedForm>
+    <form action="<c:url value='${url.base}${renderContext.mainResource.node.path}'/>" method="post" id="jahia-blog-delete-${currentNode.UUID}">
+        <input type="hidden" name="jcrRedirectTo" value="<c:url value='${url.base}${jcr:getParentOfType(renderContext.mainResource.node, "jnt:page").path}'/>"/>
+            <%-- Define the output format for the newly created node by default html or by jcrRedirectTo--%>
+        <input type="hidden" name="jcrNewNodeOutputFormat" value="html"/>
+        <input type="hidden" name="jcrMethodToCall" value="delete"/>
+    </form>
+</template:tokenizedForm>
+</c:if>
 <c:if test="${not empty pageNode}">
     <div>
     <h2 class="pageTitle">${pageNode.displayableName}<c:if
@@ -52,7 +62,8 @@
         > ${functions:abbreviate(renderContext.mainResource.node.displayableName,15,30,'...')}</c:if></h2>
     <c:if test="${jcr:hasPermission(currentNode,'jcr:write')}">
         <span class="pageedit">
-            <a class="pageedit" id="linkPageEdit" href="#formPageEdit">edit</a>
+            <a class="pagedelete" id="linkPageDelete" href="#" onclick="confirm('<fmt:message key="label.blogpage.delete.warning"><fmt:param value="${renderContext.mainResource.node.properties['jcr:title'].string}"/></fmt:message>')?document.getElementById('jahia-blog-delete-${currentNode.UUID}').submit():false;"><fmt:message key="label.blogpage.delete"/></a>
+            <a class="pageedit" id="linkPageEdit" href="#formPageEdit"><fmt:message key="label.blogpage.edit"/></a>
         </span>
         <div style="display:none">
             <form id="formPageEdit" method="post" action="${pageNode.name}/" name="blogPage">

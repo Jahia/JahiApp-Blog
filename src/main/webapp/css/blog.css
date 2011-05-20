@@ -819,7 +819,8 @@ display:block
 	padding-left:20px;
 }
 
-.bodywrapper a.postdelete {
+.bodywrapper a.postdelete,
+.bodywrapper a.pagedelete{
 	background:url(img/blog/postdelete.png) no-repeat scroll 0 50% transparent;
 	clear:both;
 	display:inline;
