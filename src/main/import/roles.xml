@@ -6,6 +6,8 @@
     <reader jcr:primaryType="jnt:role"
              j:permissions="/permissions/actions/blog"/>
 
+    <jahiapp-user jcr:primaryType="jnt:role"  j:permissions="/permissions/actions/blog/createNewBlog"/>
+
     <editor-in-chief jcr:primaryType="jnt:role"
                      j:permissions="/permissions/actions/blog/editBlogEntry"
                      j:privilegedAccess="true"
