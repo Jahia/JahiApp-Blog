@@ -20,7 +20,7 @@
 <c:set target="${moduleMap}" property="editable" value="false" />
 <c:set target="${moduleMap}" property="listQuery" value="${result}" />
 <template:addCacheDependency flushOnPathMatchingRegexp="${renderContext.mainResource.node.path}/[^/]*/[^/]*"/>
-<template:addResources type="javascript" resources="jquery.js,jquery.cuteTime.js"/>
+<template:addResources type="javascript" resources="jquery.min.js,jquery.cuteTime.js"/>
 <template:addResources type="inlinejavascript" key="cuteTimeInitialisation">
     <script>
         function initCuteTime() {
