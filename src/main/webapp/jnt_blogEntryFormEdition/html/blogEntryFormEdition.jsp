@@ -26,7 +26,7 @@
    height : 600
 }
 </uiComponents:ckeditor>
-
+   <template:tokenizedForm>
     <form id="formPost" method="post" action="${renderContext.mainResource.node.name}/" name="blogPost">
         <input type="hidden" name="jcrAutoCheckin" value="true">
         <input type="hidden" name="jcrNodeType" value="jnt:blogPost">
@@ -69,3 +69,4 @@
             </p>
         </div>
     </form>
+   </template:tokenizedForm>

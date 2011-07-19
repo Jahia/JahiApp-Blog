@@ -29,7 +29,12 @@
 <c:if test="${!jcr:isNodeType(currentNode, 'jnt:blogPost')}">
     <c:set var="blogHome" value="${url.current}"/>
 </c:if>
-<c:if test="${jcr:hasPermission(currentNode,'jcr:removeNode')}">
+
+<c:set var="canDelete" value="${jcr:hasPermission(currentNode,'deleteBlogEntry')}"/>
+<c:set var="canEdit" value="${jcr:hasPermission(currentNode,'editBlogEntry')}"/>
+
+<c:if test="${canDelete}">
+    <template:tokenizedForm>
     <form action="<c:url value='${url.base}${currentNode.path}'/>" method="post"
           id="jahia-blog-article-delete-${currentNode.UUID}">
         <input type="hidden" name="jcrRedirectTo" value="<c:url value='${url.base}${jcr:getParentOfType(renderContext.mainResource.node, "jnt:page").path}'/>"/>
@@ -37,13 +42,17 @@
         <input type="hidden" name="jcrNewNodeOutputFormat" value="html"/>
         <input type="hidden" name="jcrMethodToCall" value="delete"/>
     </form>
+    </template:tokenizedForm>
 </c:if>
 
 <div class="post">
-    <c:if test="${jcr:hasPermission(currentNode,'jcr:write')}">
+    <c:if test="${canEdit or canDelete}">
         <span class="posteditdelete">
+            <c:if test="${canDelete}">
             <a class="postdelete"  href="#" onclick="document.getElementById('jahia-blog-article-delete-${currentNode.UUID}').submit();"><fmt:message key="blog.label.delete"/></a>
+            </c:if><c:if test="${canEdit}">
             <a class="postedit" href="<c:url value='${url.base}${currentResource.node.path}.blog-edit.html'/>"><fmt:message key="blog.label.edit"/></a>
+            </c:if>
         </span>
     </c:if>
     <div class="post-date"><span>${userCreatedMonth}</span>${userCreatedDay}</div>

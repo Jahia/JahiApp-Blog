@@ -7,7 +7,7 @@
     <jahiapp-user jcr:primaryType="jnt:role"  j:permissions="/permissions/actions/blog/createNewBlog"/>
 
     <editor-in-chief jcr:primaryType="jnt:role"
-                     j:permissions="/permissions/actions/blog/editBlogEntry"
+                     j:permissions="/permissions/actions/blog/editBlogEntry /permissions/actions/blog/deleteBlogEntry"
                      j:privilegedAccess="true"
             />
 

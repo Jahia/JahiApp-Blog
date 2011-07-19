@@ -15,24 +15,6 @@
 <template:addResources type="javascript" resources="jquery.min.js,jquery-ui.min.js,jquery.jeditable.js"/>
 <template:addResources type="javascript" resources="jquery.fancybox.js"/>
 <template:addResources type="css" resources="jquery.fancybox.css"/>
-<template:addResources>
-    <script>
-    $(document).ready(function() {
-        $("#linkPageEdit").fancybox({
-			'autoDimensions'	: false,
-			'width'         	: 450,
-			'height'        	: 350,
-            'scrolling'          : 'no',
-            'titleShow'          : false,
-            'showCloseButton'    : true,
-            'transitionIn'       : 'none',
-            'transitionOut'      : 'none',
-            'centerOnScroll'     : true
-        })
-    });
-</script>
-</template:addResources>
-
 
 <c:set var="pageNode" value="${jcr:getParentOfType(currentNode, 'jnt:page')}"/>
 <c:if test="${empty pageNode}">
@@ -45,7 +27,10 @@
         </c:otherwise>
     </c:choose>
 </c:if>
-<c:if test="${jcr:hasPermission(currentNode,'jcr:removeNode')}">
+<c:set var="canDelete" value="${jcr:hasPermission(renderContext.mainResource.node,'deleteBlogEntry')}"/>
+<c:set var="canEdit" value="${jcr:hasPermission(renderContext.mainResource.node,'editBlogEntry')}"/>
+
+<c:if test="${canDelete}">
 <template:tokenizedForm>
     <form action="<c:url value='${url.base}${renderContext.mainResource.node.path}'/>" method="post" id="jahia-blog-delete-${currentNode.UUID}">
         <input type="hidden" name="jcrRedirectTo" value="<c:url value='${url.base}${jcr:getParentOfType(renderContext.mainResource.node, "jnt:page").path}'/>"/>
@@ -60,12 +45,34 @@
     <h2 class="pageTitle">${pageNode.displayableName}<c:if
             test="${not jcr:isNodeType(renderContext.mainResource.node, 'jnt:page')}">
         > ${functions:abbreviate(renderContext.mainResource.node.displayableName,15,30,'...')}</c:if></h2>
-    <c:if test="${jcr:hasPermission(currentNode,'jcr:write')}">
+    <c:if test="${canEdit or canDelete}">
         <span class="pageedit">
+            <c:if test="${canDelete}">
             <a class="pagedelete" id="linkPageDelete" href="#" onclick="confirm('<fmt:message key="label.blogpage.delete.warning"><fmt:param value="${renderContext.mainResource.node.properties['jcr:title'].string}"/></fmt:message>')?document.getElementById('jahia-blog-delete-${currentNode.UUID}').submit():false;"><fmt:message key="label.blogpage.delete"/></a>
+            </c:if><c:if test="${canEdit}">
             <a class="pageedit" id="linkPageEdit" href="#formPageEdit"><fmt:message key="label.blogpage.edit"/></a>
+            </c:if>
         </span>
+        <c:if test="${canEdit}">
+        <template:addResources type="inlinejavascript">
+            <script>
+                $(document).ready(function() {
+                    $("#linkPageEdit").fancybox({
+                        'autoDimensions'	: false,
+                        'width'         	: 450,
+                        'height'        	: 350,
+                        'scrolling'          : 'no',
+                        'titleShow'          : false,
+                        'showCloseButton'    : true,
+                        'transitionIn'       : 'none',
+                        'transitionOut'      : 'none',
+                        'centerOnScroll'     : true
+                    })
+                });
+            </script>
+        </template:addResources>
         <div style="display:none">
+            <template:tokenizedForm>
             <form id="formPageEdit" method="post" action="${pageNode.name}/" name="blogPage">
             <input type="hidden" name="jcrAutoCheckin" value="true">
             <input type="hidden" name="jcrNodeType" value="jnt:page">
@@ -87,7 +94,9 @@
                             />
                 </p>
             </form>
+            </template:tokenizedForm>
         </div>
+        </c:if>
     </c:if>
     </div>
 
