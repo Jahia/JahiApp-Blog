@@ -68,7 +68,7 @@
         </c:forEach>
     </ul>
     <div class="post-content">
-        <p>${text.string}</p>
+        ${text.string}
     </div>
     <jcr:sql var="numberOfPostsQuery"
              sql="select [jcr:uuid] from [jnt:post] as p  where isdescendantnode(p,['${currentNode.path}'])"/>

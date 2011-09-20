@@ -33,9 +33,9 @@
     <div class="post-date"><span>${userCreatedMonth}</span>${userCreatedDay}</div>
     <h2 class="post-title"><a href="<c:url value='${url.base}${currentNode.path}.html'/>"><c:out value="${title.string}"/></a></h2>
 
-    <p class="post-info"><fmt:message key="blog.label.by"/> <c:set var="fields" value="${currentNode.propertiesAsString}"/>
+    <p class="post-info"><fmt:message key="blog.label.by"/>&nbsp;<c:set var="fields" value="${currentNode.propertiesAsString}"/>
         ${createdBy.string}
-        - <fmt:formatDate value="${created.time}" type="date" dateStyle="medium"/>
+        &nbsp;-&nbsp;<fmt:formatDate value="${created.time}" type="date" dateStyle="medium"/>
         <!-- <a href="#"><fmt:message key="blog.category"/></a>    -->
     </p>
     <ul class="post-tags">

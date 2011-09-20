@@ -34,8 +34,8 @@
             <input type="hidden" name="jcrParentType" value="jnt:blogPosts"/>
             <fmt:formatDate value="${created.time}" type="date" pattern="dd" var="userCreatedDay"/>
             <fmt:formatDate value="${created.time}" type="date" pattern="MMM" var="userCreatedMonth"/>
-            <p class="post-info"><fmt:message key="blog.label.by"/> ${createdBy.string}
-                - <fmt:formatDate value="${created.time}" type="date" dateStyle="medium"/>
+            <p class="post-info"><fmt:message key="blog.label.by"/>&nbsp;${createdBy.string}
+                &nbsp;-&nbsp;<fmt:formatDate value="${created.time}" type="date" dateStyle="medium"/>
             </p>
 
             <p>

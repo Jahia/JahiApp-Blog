@@ -20,8 +20,8 @@
     <div class="post-date"><span>${userCreatedMonth}</span>${userCreatedDay}</div>
     <h2 class="post-title"><input type="text" value="" name="jcr:title"/></h2>
 
-    <p class="post-info"><fmt:message key="blog.label.by"/> <a href="#"></a>
-        - <fmt:formatDate value="${userCreated.time}" type="date" dateStyle="medium"/>
+    <p class="post-info"><fmt:message key="blog.label.by"/>&nbsp;<a href="#"></a>
+       &nbsp;-&nbsp;<fmt:formatDate value="${userCreated.time}" type="date" dateStyle="medium"/>
     </p>
     <ul class="post-tags">
         <jcr:nodeProperty node="${currentNode}" name="j:tags" var="assignedTags"/>
