@@ -150,6 +150,7 @@
                             <module-type>jahiapp</module-type>
                         </manifestEntries>
                     </archive>
+                    <archiveClasses>true</archiveClasses>
                 </configuration>
             </plugin>
         </plugins>
