@@ -576,23 +576,21 @@ div.addArticle{
 	display:block;
 	font-weight:bold;
 	font-size:1.4em;
-	color:#ccc;
-	color: rgba( 255, 255, 255, 0.7);
-	text-shadow: 0 1px 0px rgba(0 ,0 ,0 ,0.5);
+	color:#999;
+	text-shadow: 0 1px 0px rgba(0 ,0 ,0 ,0.2);
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
-	-webkit-transition: all 0.3s ease-in-out; 
-	-moz-transition: all 0.3s ease-in-out; 
-	-o-transition: all 0.3s ease-in-out; 
-	transition: all 0.3s ease-in-out; 
 }
 .bodywrapper .addArticle a:hover,
 .bodywrapper .addArticle a:focus{
 	background-color:#333;
-	background: rgba( 255, 255, 255, 0.15);
 	color:#fff;
 	text-decoration:none;
+    -webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
 }
 
 
