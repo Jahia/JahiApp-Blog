@@ -4,6 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="template" uri="http://www.jahia.org/tags/templateLib" %>
 <%@ taglib prefix="uiComponents" uri="http://www.jahia.org/tags/uiComponentsLib" %>
+<%@ taglib prefix="user" uri="http://www.jahia.org/tags/user" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <jcr:nodeProperty node="${renderContext.mainResource.node}" name="jcr:title" var="title"/>
@@ -32,7 +33,7 @@
         <input type="hidden" name="jcrNodeType" value="jnt:blogPost">
         <fmt:formatDate value="${created.time}" type="date" pattern="dd" var="userCreatedDay"/>
         <fmt:formatDate value="${created.time}" type="date" pattern="mm" var="userCreatedMonth"/>
-        <p class="post-info"><fmt:message key="blog.label.by"/>&nbsp;<a href="<c:url value='${url.base}${functions:lookupUser(createdBy.string).localPath}.html'/>">${createdBy.string}</a>
+        <p class="post-info"><fmt:message key="blog.label.by"/>&nbsp;<a href="<c:url value='${url.base}${user:lookupUser(createdBy.string).localPath}.html'/>">${createdBy.string}</a>
            &nbsp;-&nbsp;<fmt:formatDate value="${created.time}" type="date" dateStyle="medium"/>
         </p>
 		<p>
