@@ -124,7 +124,7 @@
                         </back-to-parent-page>
                     </row-col2>
                 </blog-post>
-                <blog-new j:hiddenTemplate="true" jcr:primaryType="jnt:pageTemplate">
+                <blog-new j:hiddenTemplate="true" jcr:primaryType="jnt:pageTemplate" j:requiredPermissions="#/permissions/actions/blog/addBlogEntry">
                     <pagecontent jcr:primaryType="jnt:contentList">
                         <row column="1col16" jcr:primaryType="jnt:row" />
                     </pagecontent>
