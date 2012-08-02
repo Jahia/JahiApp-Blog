@@ -116,7 +116,7 @@
                             <addComment j:bindedComponent="/templateSets/blog/templates/blog-post/row-col1/mainResourceDisplay" j:originWS="default" j:requireLoggedUser="false" j:requiredMode="live" j:requiredPermissions="#/permissions/actions/comments/addComment" jcr:mixinTypes="jmix:requiredPermissions" jcr:primaryType="jnt:addComment" />
                             <j:translation_fr jcr:language="fr" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Commentaires" />
                         </document-history>
-                        <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Blog content" />
+                        <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Blog entry" />
                         <j:translation_fr jcr:language="fr" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Contenu de l'article" />
                     </row-col1>
                     <row-col2 j:originWS="default" jcr:mixinTypes="jmix:style" jcr:primaryType="jnt:contentList">
@@ -133,7 +133,7 @@
                     </pagecontent>
                     <row-col1 j:originWS="default" j:skin="skins.box8" j:style="blue" jcr:mixinTypes="jmix:skinnable jmix:style" jcr:primaryType="jnt:contentList">
                         <blogEntryFormCreation j:originWS="default" j:requireLoggedUser="false" j:requiredMode="live" jcr:mixinTypes="jmix:requiredPermissions" jcr:primaryType="jnt:blogEntryFormCreation" />
-                        <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Blog new" />
+                        <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="New blog entry" />
                         <j:translation_fr jcr:language="fr" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Nouvel article" />
                     </row-col1>
                 </blog-new>
