@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <content xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:jnt="http://www.jahia.org/jahia/nt/1.0" xmlns:test="http://www.apache.org/jackrabbit/test" xmlns:docmix="http://www.jahia.org/jahia/docspace/mix/1.0" xmlns:jmix="http://www.jahia.org/jahia/mix/1.0" xmlns:j="http://www.jahia.org/jahia/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:test_templates="http://www.jahia.org/jahia/test_templates/nt/1.0" xmlns:docnt="http://www.jahia.org/jahia/docspace/nt/1.0" xmlns:commix="http://www.jahia.com/jahia/mix/1.0" xmlns:sv="http://www.jcp.org/jcr/sv/1.0" xmlns:rep="internal">
     <templateSets jcr:primaryType="jnt:templateSets">
-        <blog changefreq="monthly" j:dependencies="default" j:installedModules="blog" j:originWS="default" j:siteType="jahiapp" j:title="Jahia Blog" j:wcagCompliance="true" jcr:mixinTypes="jmix:sitemap" jcr:primaryType="jnt:virtualsite" priority="0.5">
+        <blog j:dependencies="default" j:installedModules="blog" j:originWS="default" j:siteType="jahiapp" j:title="Jahia Blog" j:wcagCompliance="true" jcr:primaryType="jnt:virtualsite">
             <portlets j:originWS="default" jcr:primaryType="jnt:portletFolder" />
             <files j:originWS="default" jcr:primaryType="jnt:folder" />
             <contents j:originWS="default" jcr:primaryType="jnt:contentFolder" />
