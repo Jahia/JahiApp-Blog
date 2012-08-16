@@ -55,11 +55,9 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by IntelliJ IDEA.
  * User: toto
  * Date: 1/12/11
  * Time: 17:41
- * To change this template use File | Settings | File Templates.
  */
 public class AddBlogEntryAction extends Action {
 
