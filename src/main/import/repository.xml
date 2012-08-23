@@ -95,7 +95,7 @@
                             <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Edit" />
                             <j:translation_fr jcr:language="fr" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Editer" />
                         </edit>
-                        <j:translation_fr jcr:language="fr" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Blog révision" />
+                        <j:translation_fr jcr:language="fr" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Modifier le billet" />
                     </row-col1>
                     <row-col2 j:originWS="default" j:skin="skins.box8" j:style="blue" jcr:mixinTypes="jmix:skinnable jmix:style" jcr:primaryType="jnt:contentList">
                         <fileUpload j:bindedComponent="/templateSets/blog/templates/blog-edit/row-col2/fileList" j:originWS="default" jcr:primaryType="jnt:fileUpload" />
@@ -117,7 +117,7 @@
                             <j:translation_fr jcr:language="fr" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Commentaires" />
                         </document-history>
                         <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Blog entry" />
-                        <j:translation_fr jcr:language="fr" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Contenu du billet" />
+                        <j:translation_fr jcr:language="fr" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Billet" />
                     </row-col1>
                     <row-col2 j:originWS="default" jcr:mixinTypes="jmix:style" jcr:primaryType="jnt:contentList">
                         <jahiapp-blog-logo.png j:originWS="default" jcr:primaryType="jnt:contentReference" />
