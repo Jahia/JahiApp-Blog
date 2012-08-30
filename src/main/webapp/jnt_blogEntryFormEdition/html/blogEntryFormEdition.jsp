@@ -24,7 +24,7 @@
 </script>
 <uiComponents:ckeditor selector="editContent">
 {
-   height : 600
+   height : 300
 }
 </uiComponents:ckeditor>
    <template:tokenizedForm>

@@ -23,7 +23,7 @@
 </script>
 <uiComponents:ckeditor selector="addContent">
 {
-   height : 600
+   height : 300
 }
 </uiComponents:ckeditor>
 
