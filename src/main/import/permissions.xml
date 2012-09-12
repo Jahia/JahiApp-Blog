@@ -9,6 +9,8 @@
                 <addBlogEntry jcr:primaryType="jnt:permission"/>
                 <editBlogEntry jcr:primaryType="jnt:permission"/>
                 <deleteBlogEntry jcr:primaryType="jnt:permission"/>
+                <editBlog jcr:primaryType="jnt:permission"/>
+                <deleteBlog jcr:primaryType="jnt:permission"/>
             </blog>
         </actions>
     </permissions>
