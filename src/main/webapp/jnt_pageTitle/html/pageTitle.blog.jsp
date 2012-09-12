@@ -33,7 +33,7 @@
 <c:if test="${canDelete}">
 <template:tokenizedForm>
     <form action="<c:url value='${url.base}${renderContext.mainResource.node.path}'/>" method="post" id="jahia-blog-delete-${currentNode.UUID}">
-        <input type="hidden" name="jcrRedirectTo" value="<c:url value='${url.base}${jcr:getParentOfType(renderContext.mainResource.node, "jnt:page").path}'/>"/>
+        <input type="hidden" name="jcrRedirectTo" value="<c:url value='${url.base}${jcr:findDisplayableNode(renderContext.mainResource.node.parent, renderContext).path}'/>"/>
             <%-- Define the output format for the newly created node by default html or by jcrRedirectTo--%>
         <input type="hidden" name="jcrNewNodeOutputFormat" value="html"/>
         <input type="hidden" name="jcrMethodToCall" value="delete"/>
