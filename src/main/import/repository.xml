@@ -120,7 +120,6 @@
                         <j:translation_fr jcr:language="fr" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Billet" />
                     </row-col1>
                     <row-col2 j:originWS="default" jcr:mixinTypes="jmix:style" jcr:primaryType="jnt:contentList">
-                        <jahiapp-blog-logo.png j:originWS="default" jcr:primaryType="jnt:contentReference" />
                         <back-to-parent-page j:originWS="default" jcr:primaryType="jnt:backToParentPage">
                             <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Back to parent page" />
                             <j:translation_fr jcr:language="fr" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Retour" />
@@ -138,13 +137,7 @@
                     </row-col1>
                 </blog-new>
                 <contents j:originWS="default" jcr:primaryType="jnt:contentFolder" />
-                <files j:originWS="default" jcr:primaryType="jnt:folder">
-                    <jahiapp-blog-logo.png j:height="66" j:originWS="default" j:width="129" jcr:mixinTypes="jmix:image" jcr:primaryType="jnt:file">
-                        <jcr:content jcr:mimeType="image/png" jcr:primaryType="jnt:resource" />
-                        <thumbnail jcr:mimeType="image/png" jcr:primaryType="jnt:resource" />
-                        <thumbnail2 jcr:mimeType="image/png" jcr:primaryType="jnt:resource" />
-                    </jahiapp-blog-logo.png>
-                </files>
+                <files j:originWS="default" jcr:primaryType="jnt:folder"/>
             </templates>
         </blog>
     </templateSets>
