@@ -8,7 +8,7 @@
 * POST
 ******************************************************************************/
 
-.bodywrapper .post-date {
+ .post-date {
 	width: 45px;
 	height: 50px;
 	text-align: center;
@@ -21,18 +21,18 @@
 	margin: 0 5px 0 0;
 	font-weight:bold;
 }
-.bodywrapper .post h2 a,
-.bodywrapper .post h2 a:link,
-.bodywrapper .post h2 a:visited {
+ .post h2 a,
+ .post h2 a:link,
+ .post h2 a:visited {
 	text-decoration:none;
 	background:none;
 }
-.bodywrapper .post h2 a:hover,
-.bodywrapper .post h2 a:active {
+ .post h2 a:hover,
+ .post h2 a:active {
 	text-decoration:underline;
 	background:none;
 }
-.bodywrapper .post-date span {
+ .post-date span {
 	height: 16px;
 	display: block;
 	font: normal 8px Arial, Helvetica, sans-serif;
@@ -41,45 +41,45 @@
 	padding-top: 0;
 }
 
-.bodywrapper .post {
+ .post {
 	margin: 1em 0 2em 0;
 	padding: 0 0 0.5em 0;
 	border-bottom:1px solid #e1e1e1
 }
-.bodywrapper .post-title {
+ .post-title {
 	font-size:1.8em;
 	margin:0;
 	padding:0;
 	background:none
 }
 
-.bodywrapper .post-info {
+ .post-info {
 	margin: 0 50px;
 }
 
 
-.bodywrapper .post-tags {
+ .post-tags {
 	list-style: none;
 	margin: 0 0 1em 50px;
 	padding: 0;
 }
-.bodywrapper .post-tags li {
+ .post-tags li {
 	display: inline;
 	margin-right: 8px;
 	padding: 5px 0 5px 18px;
 	background: transparent url(img/blog/tag.png) no-repeat 0 70%;
 }
-.bodywrapper .post-info-links a {
+ .post-info-links a {
 	padding:2px 10px 2px 18px;
 }
-.bodywrapper .post-info-links a.comment_count {
+ .post-info-links a.comment_count {
 	background: transparent url(img/blog/comment.png) no-repeat 0 50%;
 }
-.bodywrapper .post-info-links a.ping_count {
+ .post-info-links a.ping_count {
 	background: transparent url(img/blog/retro-link.png) no-repeat 0 50%;
 }
 
-.bodywrapper .read-more {
+ .read-more {
 	font-weight: bold;
 	clear: left;
 	text-align:right;
@@ -88,7 +88,7 @@
 /******************************************************************************
 * Search
 ******************************************************************************/
-.bodywrapper #search p{
+ #search p{
 	margin:0;
 	padding:0;
 	overflow:hidden;
@@ -96,11 +96,11 @@
 	height:1%;
 	clear:both
 }
-.bodywrapper #search fieldset {
+ #search fieldset {
 	padding:0 ;
 	border:none;
 }
-.bodywrapper #search .search{
+ #search .search{
 	margin:0;
 	padding:0;
 	border:0px;
@@ -110,7 +110,7 @@
 	border: 1px solid #ccc;
 }
 
-.bodywrapper #search .gobutton{
+ #search .gobutton{
 	width: 30px;
 	height: 22px;
 	font: bold 13px Arial, Helvetica, sans-serif;
@@ -125,7 +125,7 @@
 	color:#fff;
 }
 
-.bodywrapper #search .gobutton:hover {
+ #search .gobutton:hover {
 	color:#fff;
 	background: #3297cb url(img/blog/gradient-on.png) repeat-x top left !important;
 }
@@ -133,51 +133,51 @@
 /******************************************************************************
 * Categories
 ******************************************************************************/
-.bodywrapper div.categories {
+ div.categories {
 	margin-bottom:1em;
 }
-.bodywrapper .categories h4 {	}
-.bodywrapper .categories ul {
+ .categories h4 {	}
+ .categories ul {
 	margin:0.2em 0.5em;
 }
-.bodywrapper .categories li{
+ .categories li{
 	list-style-type:none;
 	background: url(img/blog/arrow.png) no-repeat 0.5em 0.6em;
 	padding:0.2em;
 	padding-left:18px;
 }
-.bodywrapper .categories li:hover{
+ .categories li:hover{
 	background-color:#eaeaea
 }
 /******************************************************************************
 * Archives
 ******************************************************************************/
-.bodywrapper div.archives {
+ div.archives {
 	margin-bottom:1em;
 }
-.bodywrapper .archives h4 {	}
-.bodywrapper .archives ul {
+ .archives h4 {	}
+ .archives ul {
 	margin:0.2em 0.5em;
 }
-.bodywrapper .archives li{
+ .archives li{
 	list-style-type:none;
 	background: url(img/blog/arrow.png) no-repeat 0.5em 0.6em;
 	padding:0.2em;
 	padding-left:18px;
 }
-.bodywrapper .archives li:hover{
+ .archives li:hover{
 	background-color:#eaeaea
 }
 /******************************************************************************
 *  About Me
 ******************************************************************************/
-.bodywrapper div.aboutMeListItem{
+ div.aboutMeListItem{
 	padding-bottom:1em;
 
 }
 
 
-.bodywrapper div.aboutMePhoto{
+ div.aboutMePhoto{
 	float:left;
 	width:58px;
 	height:58px;
@@ -185,38 +185,38 @@
 	border: 1px solid #ccc;
 	overflow:hidden;
 }
-.bodywrapper .aboutMeBody{
+ .aboutMeBody{
 	margin:0 0 0 70px;
 
 }
-.bodywrapper .aboutMeBody p{
+ .aboutMeBody p{
 	padding:0;
 	margin:0;
 }
-.bodywrapper .aboutMeAction{
+ .aboutMeAction{
 	text-align:right;
 	font-weight:bold
 }
-.bodywrapper .aboutMeAction a,
-.bodywrapper .aboutMeAction a:link,
-.bodywrapper .aboutMeAction a:visited {
+ .aboutMeAction a,
+ .aboutMeAction a:link,
+ .aboutMeAction a:visited {
 }
-.bodywrapper .aboutMeAction a:hover,
-.bodywrapper .aboutMeAction a:active {
+ .aboutMeAction a:hover,
+ .aboutMeAction a:active {
 }
 /******************************************************************************
 *  About Me
 ******************************************************************************/
-.bodywrapper div.tags{
+ div.tags{
 	margin-bottom:1em;
 }
-.bodywrapper .tags ul {
+ .tags ul {
 	border-top: none;
 	font-size: 1.1em;
 	text-align: justify;
 	margin:1em 0.5em
 }
-.bodywrapper .tags ul li {
+ .tags ul li {
 	display: inline;
 	background: none;
 	margin: 0;
@@ -225,32 +225,32 @@
 	line-height: 1.8em;
 }
 
-.bodywrapper .tag0 { font-size: 75%; }
-.bodywrapper .tag10 { font-size: 80%; }
-.bodywrapper .tag20 { font-size: 90%; }
-.bodywrapper .tag30 { font-size: 100%; }
-.bodywrapper .tag40 { font-size: 110%; }
-.bodywrapper .tag50 { font-size: 120%; }
-.bodywrapper .tag60 { font-size: 140%; }
-.bodywrapper .tag70 { font-size: 150%; }
-.bodywrapper .tag80 { font-size: 160%; }
-.bodywrapper .tag90 { font-size: 170%; }
-.bodywrapper .tag100 { font-size: 180%; }
+ .tag0 { font-size: 75%; }
+ .tag10 { font-size: 80%; }
+ .tag20 { font-size: 90%; }
+ .tag30 { font-size: 100%; }
+ .tag40 { font-size: 110%; }
+ .tag50 { font-size: 120%; }
+ .tag60 { font-size: 140%; }
+ .tag70 { font-size: 150%; }
+ .tag80 { font-size: 160%; }
+ .tag90 { font-size: 170%; }
+ .tag100 { font-size: 180%; }
 
-.bodywrapper ul.tags {
+ ul.tags {
 	list-style: none;
 	margin: 1em 0;
 	padding: 0;
 	font-size: 1.3em;
 	text-align: justify;
 }
-.bodywrapper ul.tags li {
+ ul.tags li {
 	display: inline;
 	margin: 0;
 	padding: 0;
 	line-height: 1.8em;
 }
-.bodywrapper .moreTags{
+ .moreTags{
 	text-align:right;
 	font-weight:bold;
 	margin:0
@@ -260,14 +260,14 @@
 /******************************************************************************
 *  syndicate
 ******************************************************************************/
-.bodywrapper div.syndicate{
+ div.syndicate{
 	margin-bottom:1em;
 }
-.bodywrapper .syndicate ul {
+ .syndicate ul {
 	margin:0;
 	padding:0;
 }
-.bodywrapper .syndicate li {
+ .syndicate li {
 	list-style:none;
 	padding:0.2em;
 	padding-left:22px;
@@ -278,7 +278,7 @@
 /******************************************************************************
 *  Form comments
 ******************************************************************************/
-.bodywrapper #commentsForm {
+ #commentsForm {
 	margin: 0;
 	padding: 0.5em 1em;
 	background: #e1e1e1;
@@ -286,43 +286,43 @@
 /******************************************************************************
 * comments
 ******************************************************************************/
-.bodywrapper .comments {
+ .comments {
 	margin: 0;
 	padding: 0.5em 1em;
 }
-.bodywrapper .comments dt {
+ .comments dt {
 	margin: 0.5em 0 0 0;
 	padding: 5px 0 16px 0;
 	padding-left: 0px;
 }
 
-.bodywrapper .comments a.comment-number {
+ .comments a.comment-number {
 	display: block;
 	float: left;
 	margin-right: 10px;
 	font-size: 1.2em;
 }
 
-.bodywrapper .comments dd {
+ .comments dd {
 	margin: 0;
 	padding: 1px 1em 0.5em 1em;
 	background: #e1e1e1;
 }
 
-.bodywrapper .comments dd p {
+ .comments dd p {
 	line-height: 1.5em;
 }
 /******************************************************************************
 * pings
 ******************************************************************************/
-.bodywrapper div#pings{
+ div#pings{
 	margin-bottom:1em;
 	padding: 0.5em 1em;
 }
-.bodywrapper #pings p{
+ #pings p{
 
 }
-.bodywrapper a.rss {
+ a.rss {
 	background: url(img/blog/rss.png) no-repeat;
 
 	padding-left:22px;
@@ -331,43 +331,43 @@
 /******************************************************************************
 * Footer list
 ******************************************************************************/
-.bodywrapper .footer-recent-comments .small,
-.bodywrapper .footer-recent-posts .small{
+ .footer-recent-comments .small,
+ .footer-recent-posts .small{
 	display: block;
 }
-.bodywrapper ul.footer-recent-comments  {
+ ul.footer-recent-comments  {
 	list-style: none;
 	margin:10px 0px;
 	padding: 0px;
 	font-size:0.85em
 
 }
-.bodywrapper ul.footer-recent-comments  li {
+ ul.footer-recent-comments  li {
 	background: url(img/blog/comment.png) no-repeat;
 	padding: 0px 0px 10px 20px;
 }
 
-.bodywrapper .footer-recent-posts  {
+ .footer-recent-posts  {
 
 }
-.bodywrapper ul.footer-recent-posts  {
+ ul.footer-recent-posts  {
 	list-style: none;
 	margin:10px 0px;
 	padding: 0px;
 	font-size:0.85em
 }
-.bodywrapper ul.footer-recent-posts  li {
+ ul.footer-recent-posts  li {
 	background: url(img/blog/post.png) no-repeat;
 	padding: 0px 0px 10px 20px;
 }
 
-.bodywrapper .credits {
+ .credits {
 	margin:1em 0;
 }
 /******************************************************************************
 *  Preferences
 ******************************************************************************/
-.bodywrapper div.preferences{
+ div.preferences{
 	background-color:#e1e1e1;
 	margin:0;
 	padding:1em 1em 0.5em;
@@ -375,28 +375,28 @@
 	line-height:normal;
 	margin-bottom:1em;
 }
-.bodywrapper .preferences p{
+ .preferences p{
 	margin:0;
 	padding:0
 }
-.bodywrapper .preferences h3{
+ .preferences h3{
 	margin:0;
 	padding:0
 }
-.bodywrapper .preferences .preference-label{
+ .preferences .preference-label{
 	font-weight:bold;
 }
 /******************************************************************************
 *  AddThis
 ******************************************************************************/
-.bodywrapper div.AddThis{
+ div.AddThis{
 	margin-bottom:1em;
 	padding: 0.5em 1em;
 }
 /******************************************************************************
 *  socialTools
 ******************************************************************************/
-.bodywrapper div.socialTools{
+ div.socialTools{
 	margin-bottom:1em;
 	padding: 0.5em 1em;
 }
@@ -404,7 +404,7 @@
 /******************************************************************************
 *  Bookmarks
 ******************************************************************************/
-.bodywrapper div.bookmarksList {
+ div.bookmarksList {
 	margin:0;
 	margin-bottom:1em;
 	display: block;
@@ -413,7 +413,7 @@
 	border: 1px solid #cecece;
 
 }
-.bodywrapper .bookmarksList ul {
+ .bookmarksList ul {
 	list-style: none;
 	margin: 0px;
 	padding: 0px;
@@ -421,15 +421,15 @@
 	font-size:0.85em;
 	line-height:normal;
 }
-.bodywrapper .bookmarksList ul li {
+ .bookmarksList ul li {
 	background: url(img/blog/bookmark.png) no-repeat;
 	padding: 0px 0px 10px 20px;
 }
-.bodywrapper .bookmarksListDes{
+ .bookmarksListDes{
 	font-weight: normal;
 }
 
-.bodywrapper .post div.bookmarksList {
+ .post div.bookmarksList {
 	background:none;
 	border:none;
 }
@@ -447,7 +447,7 @@
 /******************************************************************************
 * filterList
 ******************************************************************************/
-.bodywrapper div.filterList{
+ div.filterList{
 	background-color:#ffffff ;
 	margin:0;
 	padding:1em 1em 0.5em;
@@ -455,11 +455,11 @@
 	line-height:normal;
 	margin-bottom:1em;
 }
-.bodywrapper .filterList h4 {	}
-.bodywrapper .filterList ul {
+ .filterList h4 {	}
+ .filterList ul {
 	margin:0.2em 0.5em;
 }
-.bodywrapper .filterList li{
+ .filterList li{
 	list-style-type:none;
 	padding:0.4em;
 	float:left;
@@ -467,12 +467,12 @@
 	line-height:normal;
 }
 
-.bodywrapper .filterList img{
+ .filterList img{
 	vertical-align: middle;
 	padding:0 0.4em;
 }
 
-.bodywrapper .filterListDeleteAll {
+ .filterListDeleteAll {
 	font-weight: bold;
 	clear: left;
 	text-align:right;
@@ -484,32 +484,32 @@
 * Comment form
 ******************************************************************************/
 
-.bodywrapper #comment-form {
+ #comment-form {
 padding-bottom:1em;
 }
-.bodywrapper #comment-form fieldset {
+ #comment-form fieldset {
 	border:none;
 }
-.bodywrapper #comment-form fieldset p {
+ #comment-form fieldset p {
 	padding:5px 0;
 }
-.bodywrapper #comment-form fieldset p.field {
+ #comment-form fieldset p.field {
 	padding:5px 0;
 	margin: 0px;
 	width: auto;
 	clear: left;
 }
-.bodywrapper #comment-form p.form-help {
+ #comment-form p.form-help {
 	padding: 0px 0px 0px 31%;
 	width: auto;
 	font-style: italic;
 	line-height:normal
 }
 
-.bodywrapper #comment-form p label {
+ #comment-form p label {
 	width: auto;
 }
-.bodywrapper #comment-form p.field label {
+ #comment-form p.field label {
 	padding: 0 0 0 1%;
 	font-weight: bold;
 	float: left;
@@ -519,44 +519,44 @@ padding-bottom:1em;
 	margin-right:3px
 }
 
-.bodywrapper #comment-form  .field input {
+ #comment-form  .field input {
 	border: #ccc 1px solid;
 	padding:3px;
 	background: #ffffff;
 	width: 200px;
 }
-.bodywrapper #comment-form textarea {
+ #comment-form textarea {
 	border: #ccc 1px solid;
 	padding:2px;
 	background: #ffffff;
 	height: 115px
 }
-.bodywrapper #comment-form textarea:focus {
+ #comment-form textarea:focus {
 	background: #eaeaea
 }
-.bodywrapper #comment-form input[type='text']:focus {
+ #comment-form input[type='text']:focus {
 	background: #eaeaea
 }
-.bodywrapper #comment-form P.remember {
+ #comment-form P.remember {
 	margin: 0px
 }
-.bodywrapper #comment-form input#c_remember {
+ #comment-form input#c_remember {
 	border: 0px;
 	margin: 0px 5px 0px 30%;
 	width: auto;
 }
 
-.bodywrapper #comment-form  p.c_button {
+ #comment-form  p.c_button {
 	margin-left: 31%
 }
 /******************************************************************************
 * comment previsualisation
 ******************************************************************************/
 
-.bodywrapper div#prev {
+ div#prev {
 	padding-bottom:1em;
 }
-.bodywrapper #prev p.prev-button {
+ #prev p.prev-button {
 text-align: center
 }
 
@@ -567,8 +567,8 @@ text-align: center
 div.addArticle{
 	padding-bottom:1em;
 }
-.bodywrapper .addArticle a,
-.bodywrapper .addArticle a:link{
+ .addArticle a,
+ .addArticle a:link{
 	background:#eaeaea url(img/blog/addarticle.png) no-repeat 2% 50%;
 	padding:2px 0;
 	padding:5px 5px 5px 35px;
@@ -582,8 +582,8 @@ div.addArticle{
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
 }
-.bodywrapper .addArticle a:hover,
-.bodywrapper .addArticle a:focus{
+ .addArticle a:hover,
+ .addArticle a:focus{
 	background-color:#333;
 	color:#fff;
 	text-decoration:none;
@@ -598,86 +598,86 @@ div.addArticle{
 * bookmarks Form
 ******************************************************************************/
 
-.bodywrapper .bookmarksForm {
+ .bookmarksForm {
 	border-top:1px dotted #ccc;
 	font-size:0.9em;
 	margin-top:0.5em;
 	padding-top:0.5em;
 }
-.bodywrapper .bookmarksForm fieldset {
+ .bookmarksForm fieldset {
 	border: none
 }
-.bodywrapper .bookmarksForm fieldset p {
+ .bookmarksForm fieldset p {
 	padding: 0;
 	margin: 0px;
 }
-.bodywrapper .bookmarksForm fieldset p.field {
+ .bookmarksForm fieldset p.field {
 	padding:0;
 	margin: 0px;
 	width: auto;
 	clear: left;
 }
 
-.bodywrapper .bookmarksForm p label {
+ .bookmarksForm p label {
 	display:block;
 	font-weight:bold;
 }
 
-.bodywrapper .bookmarksForm .field input {
+ .bookmarksForm .field input {
 	border: #ccc 1px solid;
 	padding:3px;
 	background: #ffffff;
 	width:90%;
 }
-.bodywrapper .bookmarksForm textarea {
+ .bookmarksForm textarea {
 	border: #ccc 1px solid;
 	padding:2px;
 	background: #ffffff;
 	height: 100px;
 	width:90%;
 }
-.bodywrapper .bookmarksForm textarea:focus {
+ .bookmarksForm textarea:focus {
 	background: #eaeaea
 }
-.bodywrapper .bookmarksForm input[type='text']:focus {
+ .bookmarksForm input[type='text']:focus {
 	background: #eaeaea
 }
 
-.bodywrapper .bookmarksForm .bookmarks_button {
+ .bookmarksForm .bookmarks_button {
 	text-align:right
 }
 /******************************************************************************
 * Form Preferences
 ******************************************************************************/
 
-.bodywrapper .formPreferences {
+ .formPreferences {
 	margin: 0;
 	padding: 0.5em 1em;
 	background: #e1e1e1;
 }
-.bodywrapper .formPreferences fieldset {
+ .formPreferences fieldset {
 
 }
-.bodywrapper .formPreferences fieldset p {
+ .formPreferences fieldset p {
 	padding:5px 0;
 }
-.bodywrapper .formPreferences fieldset p.field {
+ .formPreferences fieldset p.field {
 	padding:5px 0;
 	margin: 0px;
 	width: auto;
 	clear: left;
 }
-.bodywrapper .formPreferences div.left {
+ .formPreferences div.left {
 	padding: 0px 0px 0px 30%;
 	width: auto;
 	font-style: italic;
 	line-height:normal
 }
 
-.bodywrapper .formPreferences p label {
+ .formPreferences p label {
 	width: auto;
 }
-.bodywrapper .formPreferences p.field label {
+ .formPreferences p.field label {
 	padding: 0 0 0 1%;
 	font-weight: bold;
 	float: left;
@@ -687,96 +687,96 @@ div.addArticle{
 	margin-right:3px
 }
 
-.bodywrapper .formPreferences .field input {
+ .formPreferences .field input {
 	border: #ccc 1px solid;
 	padding:3px;
 	background: #ffffff;
 	width: 200px;
 }
-.bodywrapper .formPreferences input.smallfield {
+ .formPreferences input.smallfield {
 	width: 40px;
 }
 
-.bodywrapper .formPreferences textarea {
+ .formPreferences textarea {
 	border: #ccc 1px solid;
 	padding:2px;
 	background: #ffffff;
 	height: 115px
 }
-.bodywrapper .formPreferences textarea:focus {
+ .formPreferences textarea:focus {
 	background: #eaeaea
 }
-.bodywrapper .formPreferences input[type='text']:focus {
+ .formPreferences input[type='text']:focus {
 	background: #eaeaea
 }
-.bodywrapper .formPreferences  .fp_button {
+ .formPreferences  .fp_button {
 	margin-left: 31%
 }
 /******************************************************************************
 *  Form Post Create and edtit
 ******************************************************************************/
-.bodywrapper #formPost {
+ #formPost {
 	margin: 0;
 	padding:0;
     clear:both;
 }
-.bodywrapper #formPost p{
+ #formPost p{
 	margin:0;
 	padding:0;
 	margin-bottom:0.5em;
 }
-.bodywrapper #formPost p.field{
+ #formPost p.field{
 	margin-bottom:0.5em;
 }
-.bodywrapper #formPost label{
+ #formPost label{
 display:block
 }
-.bodywrapper #formPost textarea,
-.bodywrapper #formPost input{
+ #formPost textarea,
+ #formPost input{
 	width:98%
 }
-.bodywrapper #formPost input.button{
+ #formPost input.button{
 	width:auto
 }
-.bodywrapper #formPost fieldset{
+ #formPost fieldset{
 	border:none;
 	margin:0;
 	padding:0;
 }
-.bodywrapper #formPost .post-tags {
+ #formPost .post-tags {
 	margin:0 ;
 }
 /******************************************************************************
 *  Blog List
 ******************************************************************************/
 
-.bodywrapper ul.bloglist  {
+ ul.bloglist  {
 	position:relative;
 	margin:0;
 	list-style:none;
 	padding:0
 }
-.bodywrapper .bloglist li {
+ .bloglist li {
 	padding:5px;
 	margin:0;
 	list-style:none;
 	background: url(img/blog/hr.png) repeat-x bottom left;
 }
-.bodywrapper .bloglist li p {
+ .bloglist li p {
 	padding:0;
 }
-.bodywrapper .bloglist li:last-child {
+ .bloglist li:last-child {
 	background-image: none;
 }
-.bodywrapper span.bloglistinfo{
+ span.bloglistinfo{
 	font-size:80%;
 	margin-left:0.2em;
 	font-weight:normal
 }
-.bodywrapper ul.bloglist li:hover{
+ ul.bloglist li:hover{
 	background-color:#eaeaea
 }
-.bodywrapper ul.bloglist .bloglistinfo2 {
+ ul.bloglist .bloglistinfo2 {
 	margin:0;
 	padding:0;
 	list-style: none;
@@ -784,32 +784,32 @@ display:block
 	font-size:0.9em;
 	font-weight:normal
 }
-.bodywrapper ul.bloglist a,
-.bodywrapper ul.bloglist a:link,
-.bodywrapper ul.bloglist a:visited {
+ ul.bloglist a,
+ ul.bloglist a:link,
+ ul.bloglist a:visited {
 	text-decoration: none;
 	display:block
 }
-.bodywrapper ul.bloglist a:hover,
-.bodywrapper ul.bloglist a:active {
+ ul.bloglist a:hover,
+ ul.bloglist a:active {
 	text-decoration:underline;
 }
 
-.bodywrapper a.atopblog {
+ a.atopblog {
     background: url(img/blog/arrow.png ) no-repeat scroll 0.2em 0.3em;
 	padding-left:24px;
 }
-.bodywrapper a.atopblogcomments {
+ a.atopblogcomments {
     background: url(img/blog/comment.png ) no-repeat scroll 0.2em 0em;
 	padding-left:24px;
 }
-.bodywrapper a.atopblogcontents {
+ a.atopblogcontents {
     background: url(img/blog/post.png ) no-repeat scroll 0.2em 0em;
 	padding-left:24px;
 }
 /* Post delete edit link */
-.bodywrapper a.postedit,
-.bodywrapper a.pageedit{
+ a.postedit,
+ a.pageedit{
 	background:url(img/blog/postedit.png) no-repeat scroll 0 50% transparent;
 	clear:both;
 	display:inline;
@@ -817,8 +817,8 @@ display:block
 	padding-left:20px;
 }
 
-.bodywrapper a.postdelete,
-.bodywrapper a.pagedelete{
+ a.postdelete,
+ a.pagedelete{
 	background:url(img/blog/postdelete.png) no-repeat scroll 0 50% transparent;
 	clear:both;
 	display:inline;
@@ -826,7 +826,7 @@ display:block
 	padding-left:20px;
 }
 
-.bodywrapper span.posteditdelete,
-.bodywrapper span.pageedit{
+ span.posteditdelete,
+ span.pageedit{
 	float:right;
 }
