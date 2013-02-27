@@ -42,13 +42,16 @@
 </c:if>
 <c:if test="${not empty pageNode}">
     <div>
-    <h2 class="pageTitle">${pageNode.displayableName}<c:if
+    <h2 class="pageTitle"><c:out value="${pageNode.displayableName}" /><c:if
             test="${not jcr:isNodeType(renderContext.mainResource.node, 'jnt:page')}">
-        > ${functions:abbreviate(renderContext.mainResource.node.displayableName,15,30,'...')}</c:if></h2>
+        ><c:out value="${functions:abbreviate(renderContext.mainResource.node.displayableName,15,30,'...')}" /></c:if></h2>
     <c:if test="${canEdit or canDelete}">
         <span class="pageedit">
             <c:if test="${canDelete}">
-            <a class="pagedelete" id="linkPageDelete" href="#" onclick="confirm('<fmt:message key="label.blogpage.delete.warning"><fmt:param value="${renderContext.mainResource.node.properties['jcr:title'].string}"/></fmt:message>')?document.getElementById('jahia-blog-delete-${currentNode.UUID}').submit():false;"><fmt:message key="label.blogpage.delete"/></a>
+            	 <c:set var="delmessparamvalue">
+            	    <c:out value="${renderContext.mainResource.node.properties['jcr:title'].string}" />
+            	 </c:set>
+            <a class="pagedelete" id="linkPageDelete" href="#" onclick="confirm('<fmt:message key="label.blogpage.delete.warning"><fmt:param value="${delmessparamvalue}"/></fmt:message>')?document.getElementById('jahia-blog-delete-${currentNode.UUID}').submit():false;"><fmt:message key="label.blogpage.delete"/></a>
             </c:if><c:if test="${canEdit}">
             <a class="pageedit" id="linkPageEdit" href="#formPageEdit"><fmt:message key="label.blogpage.edit"/></a>
             </c:if>
@@ -78,7 +81,8 @@
             <input type="hidden" name="jcrNodeType" value="jnt:page">
                 <p>
                     <label for="title"><fmt:message key="title"/>: </label>
-                    <input id="title" type="text" value="<c:out value='${pageNode.properties["jcr:title"].string}'/>" name="jcr:title"/>
+                    <c:set var="pageTitleString" value='${pageNode.properties["jcr:title"].string}'/>
+                    <input id="title" type="text" value="<c:out value='${pageTitleString}'/>" name="jcr:title"/>
                 </p>
                 <p>
                     <label for="description"><fmt:message key="label.description"/>: </label>
