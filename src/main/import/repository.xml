@@ -69,7 +69,7 @@
                             <authorDisplay j:about="true" j:birthDate="true" j:email="false" j:firstName="true" j:gender="false" j:lastName="true" j:originWS="default" j:picture="true" j:title="true" j:userView="restricted" jcr:primaryType="jnt:authorDisplay" />
                         </contentList>
                         <calendar endDateProperty="jcr:created" j:bindedComponent="/templateSets/blog/templates/blog/row-col1/blog-list/blog-posts" j:channelIncludeOrExclude="exclude" j:channelSelection="amazon_kindle_fire_ver1 apple_ipad_ver1 apple_iphone_ver1 blackberry9530_ver1 generic_android" j:originWS="default" jcr:mixinTypes="jmix:channelSelection" jcr:primaryType="jnt:calendar" startDateProperty="jcr:created" />
-                        <facets j:bindedComponent="/templateSets/blog/templates/blog/row-col1/blog-list/blog-posts" j:expiration="900" j:originWS="default" j:perUser="false" j:view="javascripttagcloud" jcr:mixinTypes="jmix:cache jmix:renderable" jcr:primaryType="jnt:facets">
+                        <facets j:bindedComponent="/templateSets/blog/templates/blog/row-col1/blog-list/blog-posts" j:expiration="900" j:originWS="default" j:perUser="false" j:view="javascripttagcloud" jcr:mixinTypes="jmix:cache jmix:renderable" jcr:primaryType="jnt:facets" j:type="jnt:blogPost">
                             <fieldFacet facet="tags" field="jmix:tagged;j:tags" j:originWS="default" jcr:primaryType="jnt:fieldFacet" limit="100" mincount="1" missing="false" offset="0">
                                 <j:translation_en jcr:language="en" jcr:primaryType="jnt:translation" label="Tags" />
                                 <j:translation_fr jcr:language="fr" jcr:primaryType="jnt:translation" label="Tags" />
