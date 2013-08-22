@@ -4,11 +4,11 @@
        xmlns:j="http://www.jahia.org/jahia/1.0"
        xmlns:jnt="http://www.jahia.org/jahia/nt/1.0">
 
-    <jahiapp-user jcr:primaryType="jnt:role"  j:permissions="/permissions/actions/blog/createNewBlog"/>
+    <jahiapp-user jcr:primaryType="jnt:role"  j:permissionNames="createNewBlog"/>
 
     <editor jcr:primaryType="jnt:role">
         <editor-in-chief jcr:primaryType="jnt:role"
-                     j:permissions="/permissions/actions/blog/editBlogEntry /permissions/actions/blog/deleteBlogEntry /permissions/actions/blog/editBlog /permissions/actions/blog/deleteBlog"
+                     j:permissionNames="editBlogEntry deleteBlogEntry editBlog deleteBlog"
                      j:privilegedAccess="true"
             />
     </editor>

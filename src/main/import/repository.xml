@@ -12,9 +12,9 @@
                     </pagecontent>
                     <row-col1 j:originWS="default" j:style="black" jcr:mixinTypes="jmix:style" jcr:primaryType="jnt:contentList">
                         <j:translation_en jcr:language="en" jcr:primaryType="jnt:translation" />
-                        <create-new-blog j:originWS="default" j:requireLoggedUser="true" j:requiredMode="live" j:requiredPermissions="#/permissions/actions/blog/createNewBlog" j:skin="skins.box8" j:style="blue" jcr:mixinTypes="jmix:requiredPermissions jmix:skinnable jmix:style" jcr:primaryType="jnt:contentList">
+                        <create-new-blog j:originWS="default" j:requireLoggedUser="true" j:requiredMode="live" j:requiredPermissionNames="createNewBlog" j:skin="skins.box8" j:style="blue" jcr:mixinTypes="jmix:requiredPermissions jmix:skinnable jmix:style" jcr:primaryType="jnt:contentList">
                             <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Create new blog" />
-                            <new-blog i18npages="false" j:originWS="default" j:requireLoggedUser="true" j:requiredMode="live" j:requiredPermissions="#/permissions/actions/blog/createNewBlog" jcr:mixinTypes="jmix:requiredPermissions" jcr:primaryType="jnt:pageFormCreation" templateNode="/templateSets/blog/templates/blog" useDescription="true">
+                            <new-blog i18npages="false" j:originWS="default" j:requireLoggedUser="true" j:requiredMode="live" j:requiredPermissionNames="createNewBlog" jcr:mixinTypes="jmix:requiredPermissions" jcr:primaryType="jnt:pageFormCreation" templateNode="/templateSets/blog/templates/blog" useDescription="true">
                                 <j:translation_en buttonLabel="Create new blog" jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="New Blog" />
                                 <j:translation_fr buttonLabel="Créer un nouveau blog" jcr:language="fr" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Nouveaux blog" />
                             </new-blog>
@@ -61,7 +61,7 @@
                         <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Blog List" />
                     </row-col1>
                     <row-col2 j:originWS="default" jcr:mixinTypes="jmix:style" jcr:primaryType="jnt:contentList">
-                        <addBlogLink aClass="addArticle" divClass="addArticle" j:bindedComponent="/templateSets/blog/templates/blog" j:channelIncludeOrExclude="exclude" j:channelSelection="amazon_kindle_fire_ver1 apple_ipad_ver1 apple_iphone_ver1 blackberry9530_ver1 generic_android" j:originWS="default" j:requiredMode="live" j:requiredPermissions="#/permissions/actions/blog/addBlogEntry" jcr:mixinTypes="jmix:channelSelection jmix:requiredPermissions" jcr:primaryType="jnt:componentLink" targetTemplate="blog-new">
+                        <addBlogLink aClass="addArticle" divClass="addArticle" j:bindedComponent="/templateSets/blog/templates/blog" j:channelIncludeOrExclude="exclude" j:channelSelection="amazon_kindle_fire_ver1 apple_ipad_ver1 apple_iphone_ver1 blackberry9530_ver1 generic_android" j:originWS="default" j:requiredMode="live" j:requiredPermissionNames="addBlogEntry" jcr:mixinTypes="jmix:channelSelection jmix:requiredPermissions" jcr:primaryType="jnt:componentLink" targetTemplate="blog-new">
                             <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Add a new blog entry" />
                             <j:translation_fr jcr:language="fr" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Ecrire un nouveau billet" />
                         </addBlogLink>
@@ -85,7 +85,7 @@
                         <illustration j:allowedTypes="jnt:imageReference" j:level="1" j:originWS="default" jcr:primaryType="jnt:absoluteArea" />
                     </illustration>
                 </blog>
-                <blog-edit j:applyOn="jnt:blogPost" j:originWS="default" j:priority="10" j:requiredPermissions="#/permissions/actions/blog/editBlogEntry" jcr:primaryType="jnt:contentTemplate">
+                <blog-edit j:applyOn="jnt:blogPost" j:originWS="default" j:priority="10" j:requiredPermissionNames="editBlogEntry" jcr:primaryType="jnt:contentTemplate">
                     <pagecontent j:originWS="default" jcr:primaryType="jnt:contentList">
                         <row column="2col124" j:originWS="default" jcr:primaryType="jnt:row" />
                     </pagecontent>
@@ -113,7 +113,7 @@
                         <document-history j:originWS="default" j:skin="skins.box8" j:style="grey" jcr:mixinTypes="jmix:skinnable jmix:style" jcr:primaryType="jnt:contentList">
                             <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Comments" />
                             <commentsList j:bindedComponent="/templateSets/blog/templates/blog-post/row-col1/mainResourceDisplay" j:originWS="default" jcr:primaryType="jnt:commentsList" />
-                            <addComment j:bindedComponent="/templateSets/blog/templates/blog-post/row-col1/mainResourceDisplay" j:originWS="default" j:requireLoggedUser="false" j:requiredMode="live" j:requiredPermissions="#/permissions/actions/comments/addComment" jcr:mixinTypes="jmix:requiredPermissions" jcr:primaryType="jnt:addComment" />
+                            <addComment j:bindedComponent="/templateSets/blog/templates/blog-post/row-col1/mainResourceDisplay" j:originWS="default" j:requireLoggedUser="false" j:requiredMode="live" j:requiredPermissionNames="addComment" jcr:mixinTypes="jmix:requiredPermissions" jcr:primaryType="jnt:addComment" />
                             <j:translation_fr jcr:language="fr" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Commentaires" />
                         </document-history>
                         <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Blog entry" />
