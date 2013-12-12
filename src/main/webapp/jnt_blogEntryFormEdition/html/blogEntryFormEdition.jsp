@@ -28,7 +28,7 @@
 }
 </uiComponents:ckeditor>
    <template:tokenizedForm>
-    <form id="formPost" method="post" action="${renderContext.mainResource.node.name}/" name="blogPost">
+    <form id="formPost" method="post" action="<c:url value='${url.base}${functions:escapePath(renderContext.mainResource.node.path)}/'/>" name="blogPost">
         <input type="hidden" name="jcrAutoCheckin" value="true">
         <input type="hidden" name="jcrNodeType" value="jnt:blogPost">
         <fmt:formatDate value="${created.time}" type="date" pattern="dd" var="userCreatedDay"/>
