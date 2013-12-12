@@ -28,7 +28,7 @@
 </uiComponents:ckeditor>
 
     <template:tokenizedForm>
-        <form id="formPost" method="post" action="${renderContext.mainResource.node.name}.addBlogEntry.do" name="blogPost">
+        <form id="formPost" method="post" action="<c:url value='${url.base}${functions:escapePath(renderContext.mainResource.node.path)}.addBlogEntry.do'/>" name="blogPost">
             <input type="hidden" name="jcrNodeType" value="jnt:blogPost"/>
             <input type="hidden" name="jcrNormalizeNodeName" value="true"/>
             <input type="hidden" name="jcrParentType" value="jnt:blogPosts"/>
