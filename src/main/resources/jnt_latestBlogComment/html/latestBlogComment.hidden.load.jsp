@@ -20,7 +20,7 @@
                   limit="20"/>
 <c:set target="${moduleMap}" property="editable" value="false"/>
 <c:set target="${moduleMap}" property="listQuery" value="${listQuery}"/>
-<template:addCacheDependency flushOnPathMatchingRegexp="\Q${renderContext.mainResource.node.path}\E/.*/comments"/>
+<template:addCacheDependency flushOnPathMatchingRegexp="\\\\Q${renderContext.mainResource.node.path}\\\\E/.*/comments/.*"/>
 <template:addResources type="javascript" resources="jquery.min.js,jquery.cuteTime.js"/>
 <template:addResources type="inlinejavascript" key="cuteTimeInitialisation">
     <script>

@@ -19,7 +19,7 @@
              statement="select * from [jnt:blogPost] as blogPost  where isdescendantnode(blogPost, ['${renderContext.mainResource.node.path}']) order by blogPost.[jcr:lastModified] desc" limit="20"/>
 <c:set target="${moduleMap}" property="editable" value="false" />
 <c:set target="${moduleMap}" property="listQuery" value="${result}" />
-<template:addCacheDependency flushOnPathMatchingRegexp="\Q${renderContext.mainResource.node.path}\E/[^/]*/[^/]*"/>
+<template:addCacheDependency flushOnPathMatchingRegexp="\\\\Q${renderContext.mainResource.node.path}\\\\E/[^/]*/[^/]*"/>
 <template:addResources type="javascript" resources="jquery.min.js,jquery.cuteTime.js"/>
 <template:addResources type="inlinejavascript" key="cuteTimeInitialisation">
     <script>
