@@ -13,6 +13,13 @@
 <jcr:nodeProperty node="${renderContext.mainResource.node}" name="jcr:created" var="created"/>
 <template:addResources type="css" resources="blog.css"/>
 <template:addResources type="javascript" resources="jquery.min.js,jquery.jeditable.js"/>
+
+<jcr:nodeProperty node="${renderContext.mainResource.node}" name="j:tags" var="assignedTags"/>
+<c:set var="tags" value=""/>
+<c:forEach items="${assignedTags}" var="tag" varStatus="status">
+    <c:set var="tags" value="${tags}${tag.node.name}${!status.last ? ',' : ''}"/>
+</c:forEach>
+<c:url var="postUrl" value="${url.base}${renderContext.mainResource.node.path}"/>
 <script type="text/javascript">
     $(document).ready(function() {
         $.each(['editContent'], function(index, element) {
@@ -21,6 +28,41 @@
             }
         });
     });
+
+    function submitBlogPost(){
+        // remove tags
+        <c:choose>
+        <c:when test="${not empty tags}">
+        var initialTags = "${tags}".split(',');
+        </c:when>
+        <c:otherwise>
+        var initialTags = [];
+        </c:otherwise>
+        </c:choose>
+        var tags = $(".tags").val().split(',');
+        var tagsToRemove = [];
+        $.each(initialTags, function(i, initialTag){
+            if($.inArray(initialTag, tags) == -1){
+                tagsToRemove.push(initialTag);
+            }
+        });
+
+        var options = {
+            url: "${postUrl}.removeTag.do",
+            type: "POST",
+            dataType: "json",
+            data: {"tag":tagsToRemove},
+            traditional: true
+        };
+
+        $.ajax(options)
+                .done(function (result) {
+                    // tag successfully deleted, save the form
+                    document.blogPost.submit();
+                });
+
+        return false;
+    }
 </script>
 <uiComponents:ckeditor selector="editContent">
 {
@@ -48,16 +90,13 @@
                 </textarea>
             
             <ul class="post-tags">
-                <c:set var="tags" value=""/>
-                <jcr:nodeProperty node="${renderContext.mainResource.node}" name="j:tags" var="assignedTags"/>
                 <c:forEach items="${assignedTags}" var="tag" varStatus="status">
                     <li>${tag.node.name}</li>
-                    <c:set var="tags" value="${tags}${tag.node.name}${!status.last ? ',' : ''}"/>
                 </c:forEach>
             </ul>
 			<p>
                 <label><fmt:message key="blog.label.tag"/>:&nbsp;</label>
-                <input type="text" name="j:newTag" value="${tags}"/>
+                <input type="text" class="tags" name="j:newTag" value="${tags}"/>
             </p>
             <p>
                 <input
@@ -65,7 +104,7 @@
                         type="button"
                         tabindex="16"
                         value="<fmt:message key='blog.label.save'/>"
-                        onclick="document.blogPost.submit();"
+                        onclick="submitBlogPost()"
                         />
             </p>
         </div>
