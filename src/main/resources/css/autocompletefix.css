@@ -1,0 +1,10 @@
+.ui-autocomplete {
+    width: 223px !important;
+    list-style: none !important;
+    padding: 5px !important;
+}
+
+.addTag {
+    margin-bottom: 0 !important;
+    margin-right: 10px !important;
+}

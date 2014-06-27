@@ -12,72 +12,85 @@
 <jcr:nodeProperty node="${renderContext.mainResource.node}" name="jcr:createdBy" var="createdBy"/>
 <jcr:nodeProperty node="${renderContext.mainResource.node}" name="jcr:created" var="created"/>
 <template:addResources type="css" resources="blog.css"/>
-<template:addResources type="javascript" resources="jquery.min.js,jquery.jeditable.js"/>
+<template:addResources type="css" resources="tagged.css"/>
+<template:addResources type="css" resources="jquery-ui.smoothness.css"/>
+<template:addResources type="css" resources="autocompletefix.css"/>
+<template:addResources type="javascript" resources="jquery.min.js,jquery.jeditable.js,jquery-ui.min.js"/>
+<template:addResources type="javascript" resources="blogEntry.js"/>
+<jcr:nodeProperty node="${renderContext.mainResource.node}" name="j:tagList" var="assignedTags"/>
 
-<jcr:nodeProperty node="${renderContext.mainResource.node}" name="j:tags" var="assignedTags"/>
-<c:set var="tags" value=""/>
-<c:forEach items="${assignedTags}" var="tag" varStatus="status">
-    <c:set var="tags" value="${tags}${tag.node.name}${!status.last ? ',' : ''}"/>
-</c:forEach>
 <c:url var="postUrl" value="${url.base}${renderContext.mainResource.node.path}"/>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $.each(['editContent'], function(index, element) {
-            if ($('#' + element).length > 0) {
-                $('label[for="' + element + '"]').hide();
-            }
-        });
-    });
-
-    function submitBlogPost(){
-        // remove tags
-        <c:choose>
-        <c:when test="${not empty tags}">
-        var initialTags = "${tags}".split(',');
-        </c:when>
-        <c:otherwise>
-        var initialTags = [];
-        </c:otherwise>
-        </c:choose>
-        var tags = $(".tags").val().split(',');
-        var tagsToRemove = [];
-        $.each(initialTags, function(i, initialTag){
-            if($.inArray(initialTag, tags) == -1){
-                tagsToRemove.push(initialTag);
-            }
-        });
-
-        var options = {
-            url: "${postUrl}.removeTag.do",
-            type: "POST",
-            dataType: "json",
-            data: {"tag":tagsToRemove},
-            traditional: true
-        };
-
-        $.ajax(options)
-                .done(function (result) {
-                    // tag successfully deleted, save the form
-                    document.blogPost.submit();
-                });
-
-        return false;
-    }
-</script>
 <uiComponents:ckeditor selector="editContent">
 {
    height : 300
 }
 </uiComponents:ckeditor>
+<script type="text/javascript">
+    $(document).ready(function(){
+        function split( val ) {
+            return val.split( /,\s*/ );
+        }
+        function extractLast( term ) {
+            return split( term ).pop();
+        }
+
+        $(".addTag").bind( "keydown", function( event ) {
+            if ( event.keyCode === $.ui.keyCode.TAB &&
+                    $( this ).data( "ui-autocomplete" ).menu.active ) {
+                event.preventDefault();
+            }
+        }).autocomplete({
+            autofocus:true,
+            source:function( request, response ) {
+                $.ajax({
+                    url: "<c:url value='${url.base}${renderContext.mainResource.node.path}.matchingTags.do'/>",
+                    dataType: "json",
+                    data: {
+                        path: "${jcr:getParentOfType(renderContext.mainResource.node, 'jnt:page').path}",
+                        limit: 10,
+                        q: extractLast( request.term )
+                    },
+                    success: function( data ) {
+                        response( $.map( data.tags, function( item ) {
+                            return {
+                                label: item.name,
+                                value: item.name
+                            }
+                        }));
+                    }
+                });
+            },
+            focus: function() {
+                // prevent value inserted on focus
+                return false;
+            },
+            select: function( event, ui ) {
+                var terms = split( this.value );
+                // remove the current input
+                terms.pop();
+                // add the selected item
+                terms.push( ui.item.value );
+                // add placeholder to get the comma-and-space at the end
+                terms.push( "" );
+                this.value = terms.join( ", " );
+                return false;
+            }
+        });
+    });
+</script>
    <template:tokenizedForm>
     <form id="formPost" method="post" action="<c:url value='${url.base}${functions:escapePath(renderContext.mainResource.node.path)}/'/>" name="blogPost">
         <input type="hidden" name="jcrAutoCheckin" value="true">
+        <input type="hidden" name="jcrRedirectTo" value="<c:url value='${url.base}${functions:escapePath(renderContext.mainResource.node.path)}'/>"/>
+        <input type="hidden" name="jcrMethodToCall" value="put">
+        <input type="hidden" name="jcrNewNodeOutputFormat" value="html"/>
         <input type="hidden" name="jcrNodeType" value="jnt:blogPost">
         <fmt:formatDate value="${created.time}" type="date" pattern="dd" var="userCreatedDay"/>
         <fmt:formatDate value="${created.time}" type="date" pattern="mm" var="userCreatedMonth"/>
         <p class="post-info"><fmt:message key="blog.label.by"/>&nbsp;<a href="<c:url value='${url.base}${user:lookupUser(createdBy.string).localPath}.html'/>">${createdBy.string}</a>
            &nbsp;-&nbsp;<fmt:formatDate value="${created.time}" type="date" dateStyle="medium"/>
         </p>
+
 		<p>
 	    	<label><fmt:message key="title"/> </label>
 			<input type="text" value="<c:out value='${title.string}'/>" name="jcr:title"/>
@@ -88,24 +101,25 @@
                 <textarea name="text" rows="10" cols="70" id="editContent">
                     ${fn:escapeXml(text.string)}
                 </textarea>
-            
-            <ul class="post-tags">
-                <c:forEach items="${assignedTags}" var="tag" varStatus="status">
-                    <li>${tag.node.name}</li>
-                </c:forEach>
-            </ul>
+            <br>
+            <p>
+                <ul class="post-tags">
+                    <c:forEach items="${assignedTags}" var="tag" varStatus="status">
+                        <li>
+                            ${tag.string}
+                            <a class="delete" data-tag="${tag.string}" href="#" onclick="deleteTag(this); return false;"></a>
+                            <input style="display: none" type="text" name="j:tagList" value="${tag.string}"/>
+                        </li>
+                    </c:forEach>
+                </ul>
+            </p>
 			<p>
                 <label><fmt:message key="blog.label.tag"/>:&nbsp;</label>
-                <input type="text" class="tags" name="j:newTag" value="${tags}"/>
+                <input type="text" value="" style="width: 220px" class="addTag"/>
+                <input type="button" class="button" value="<fmt:message key='label.add'/>" onclick="addTag()"/>
             </p>
             <p>
-                <input
-                        class="button"
-                        type="button"
-                        tabindex="16"
-                        value="<fmt:message key='blog.label.save'/>"
-                        onclick="submitBlogPost()"
-                        />
+                <input class="button" type="submit" tabindex="16" value="<fmt:message key='label.save'/>"/>
             </p>
         </div>
     </form>

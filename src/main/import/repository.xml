@@ -251,8 +251,8 @@
                           j:view="javascripttagcloud"
                           jcr:mixinTypes="jmix:cache jmix:renderable"
                           jcr:primaryType="jnt:facets">
-                                <fieldFacet facet="tags"
-                                 field="jmix:tagged;j:tags"
+                                <fieldFacet facet="tagList"
+                                 field="jmix:tagged;j:tagList"
                                  jcr:primaryType="jnt:fieldFacet"
                                  limit="100"
                                  mincount="1"

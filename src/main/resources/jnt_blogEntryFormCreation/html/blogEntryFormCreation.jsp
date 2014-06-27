@@ -6,27 +6,74 @@
 <%@ taglib prefix="uiComponents" uri="http://www.jahia.org/tags/uiComponentsLib" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <template:addResources type="css" resources="blog.css"/>
-<template:addResources type="javascript" resources="jquery.min.js,jquery.jeditable.js"/>
+<template:addResources type="css" resources="tagged.css"/>
+<template:addResources type="css" resources="jquery-ui.smoothness.css"/>
+<template:addResources type="css" resources="autocompletefix.css"/>
+<template:addResources type="javascript" resources="jquery.min.js,jquery.jeditable.js,jquery-ui.min.js"/>
+<template:addResources type="javascript" resources="blogEntry.js"/>
 <jcr:nodeProperty node="${renderContext.mainResource.node}" name="jcr:title" var="title"/>
 <jcr:nodeProperty node="${renderContext.mainResource.node}" name="text" var="text"/>
 <jcr:nodeProperty node="${renderContext.mainResource.node}" name="jcr:createdBy" var="createdBy"/>
 <jcr:nodeProperty node="${renderContext.mainResource.node}" name="jcr:created" var="created"/>
-
-<script type="text/javascript">
-    $(document).ready(function() {
-        $.each(['addContent'], function(index, element) {
-            if ($('#' + element).length > 0) {
-                $('label[for="' + element + '"]').hide();
-            }
-        });
-    });
-</script>
 <uiComponents:ckeditor selector="addContent">
 {
    height : 300
 }
 </uiComponents:ckeditor>
 
+<script type="text/javascript">
+    $(document).ready(function(){
+        function split( val ) {
+            return val.split( /,\s*/ );
+        }
+        function extractLast( term ) {
+            return split( term ).pop();
+        }
+
+        $(".addTag").bind( "keydown", function( event ) {
+            if ( event.keyCode === $.ui.keyCode.TAB &&
+                    $( this ).data( "ui-autocomplete" ).menu.active ) {
+                event.preventDefault();
+            }
+        }).autocomplete({
+            autofocus:true,
+            source:function( request, response ) {
+                $.ajax({
+                    url: "<c:url value='${url.base}${renderContext.mainResource.node.path}.matchingTags.do'/>",
+                    dataType: "json",
+                    data: {
+                        path: "${renderContext.mainResource.node.path}",
+                        limit: 10,
+                        q: extractLast( request.term )
+                    },
+                    success: function( data ) {
+                        response( $.map( data.tags, function( item ) {
+                            return {
+                                label: item.name,
+                                value: item.name
+                            }
+                        }));
+                    }
+                });
+            },
+            focus: function() {
+                // prevent value inserted on focus
+                return false;
+            },
+            select: function( event, ui ) {
+                var terms = split( this.value );
+                // remove the current input
+                terms.pop();
+                // add the selected item
+                terms.push( ui.item.value );
+                // add placeholder to get the comma-and-space at the end
+                terms.push( "" );
+                this.value = terms.join( ", " );
+                return false;
+            }
+        });
+    });
+</script>
     <template:tokenizedForm>
         <form id="formPost" method="post" action="<c:url value='${url.base}${functions:escapePath(renderContext.mainResource.node.path)}.addBlogEntry.do'/>" name="blogPost">
             <input type="hidden" name="jcrNodeType" value="jnt:blogPost"/>
@@ -43,21 +90,20 @@
                 <input type="text" value="" name="jcr:title"/>
             </p>
 
-            <ul class="post-tags">
-                <jcr:nodeProperty node="${currentNode}" name="j:tags" var="assignedTags"/>
-                <c:forEach items="${assignedTags}" var="tag" varStatus="status">
-                    <li>${tag.node.name}</li>
-                </c:forEach>
-            </ul>
             <div class="post-content">
-                <p>
-                    <label><fmt:message key="blog.post"/> </label>
-                    <textarea name="text" rows="10" cols="70" id="addContent"></textarea>
-                </p>
+                <label><fmt:message key="blog.post"/> </label>
+                <textarea name="text" rows="10" cols="70" id="addContent"></textarea>
 
+                <br>
                 <p>
-                    <label> <fmt:message key="jnt_blog.tagThisBlogPost"/> :</label>
-                    <input type="text" name="j:newTag" value=""/>
+                    <ul class="post-tags">
+
+                    </ul>
+                </p>
+                <p>
+                    <label><fmt:message key="blog.label.tag"/>:&nbsp;</label>
+                    <input type="text" value="" style="width: 220px" class="addTag"/>
+                    <input type="button" class="button" value="<fmt:message key='label.add'/>" onclick="addTag()"/>
                 </p>
 
                 <p>
@@ -65,7 +111,7 @@
                     <input class="button"
                            type="button"
                            tabindex="16"
-                           value="<fmt:message key='blog.label.save'/>"
+                           value="<fmt:message key='label.save'/>"
                            onclick="
                         if (document.blogPost.elements['jcr:title'].value == '') {
                             alert('${fn:replace(noTitle,"'","\\'")}');

@@ -24,9 +24,9 @@
        &nbsp;-&nbsp;<fmt:formatDate value="${userCreated.time}" type="date" dateStyle="medium"/>
     </p>
     <ul class="post-tags">
-        <jcr:nodeProperty node="${currentNode}" name="j:tags" var="assignedTags"/>
+        <jcr:nodeProperty node="${currentNode}" name="j:tagList" var="assignedTags"/>
         <c:forEach items="${assignedTags}" var="tag" varStatus="status">
-            <li>${tag.node.name}</li>
+            <li>${tag.string}</li>
         </c:forEach>
     </ul>
     <div class="post-content">

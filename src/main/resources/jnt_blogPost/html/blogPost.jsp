@@ -65,9 +65,9 @@
     <c:set var="fields" value="${contentUser.propertiesAsString}"/>
     <p class="post-info"><fmt:message key="blog.label.by"/>&nbsp;${user:fullName(curentUser)}&nbsp;-&nbsp;<fmt:formatDate value="${created.time}" type="date" dateStyle="medium"/></p>
     <ul class="post-tags">
-        <jcr:nodeProperty node="${currentNode}" name="j:tags" var="assignedTags"/>
+        <jcr:nodeProperty node="${currentNode}" name="j:tagList" var="assignedTags"/>
         <c:forEach items="${assignedTags}" var="tag" varStatus="status">
-            <li>${tag.node.name}</li>
+            <li>${tag.string}</li>
         </c:forEach>
     </ul>
     <div class="post-content">
