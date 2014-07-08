@@ -23,7 +23,7 @@ function deleteTag(tag) {
 
 function addTag(){
     var $newTag = $(".addTag");
-    var values = $newTag.val().trim().split(",");
+    var values = $newTag.val().trim().toLowerCase().split(",");
     if(values.length > 0){
         var $ul = $('.post-tags');
         for (var i = 0; i < values.length; i++) {
