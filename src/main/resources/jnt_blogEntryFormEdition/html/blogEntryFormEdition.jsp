@@ -87,7 +87,7 @@
         <input type="hidden" name="jcrNodeType" value="jnt:blogPost">
         <fmt:formatDate value="${created.time}" type="date" pattern="dd" var="userCreatedDay"/>
         <fmt:formatDate value="${created.time}" type="date" pattern="mm" var="userCreatedMonth"/>
-        <p class="post-info"><fmt:message key="blog.label.by"/>&nbsp;<a href="<c:url value='${url.base}${user:lookupUser(createdBy.string).localPath}.html'/>">${createdBy.string}</a>
+        <p class="post-info"><fmt:message key="blog.label.by"/>&nbsp;<a href="<c:url value='${url.base}${user:lookupUser(createdBy.string).path}.html'/>">${createdBy.string}</a>
            &nbsp;-&nbsp;<fmt:formatDate value="${created.time}" type="date" dateStyle="medium"/>
         </p>
 

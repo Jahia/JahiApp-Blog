@@ -20,7 +20,7 @@
 <jcr:nodeProperty node="${currentNode}" name="text" var="text"/>
 <jcr:nodeProperty node="${currentNode}" name="jcr:createdBy" var="createdBy"/>
 	
-<c:set var="curentUser" value="${user:lookupUser(createdBy.string)}"/>	
+<c:set var="currentUser" value="${user:lookupUser(createdBy.string)}"/>
 
 <jcr:nodeProperty node="${currentNode}" name="jcr:created" var="created"/>
 <template:addResources type="css" resources="blog.css"/>
@@ -37,7 +37,7 @@
     <h2 class="post-title"><a href="<c:url value='${url.base}${currentNode.path}.html'/>"><c:out value="${title.string}"/></a></h2>
 
     <p class="post-info"><fmt:message key="blog.label.by"/>&nbsp;<c:set var="fields" value="${currentNode.propertiesAsString}"/>
-        ${user:fullName(curentUser)} 
+        ${user:fullName(currentUser)}
         &nbsp;-&nbsp;<fmt:formatDate value="${created.time}" type="date" dateStyle="medium"/>
         <!-- <a href="#"><fmt:message key="blog.category"/></a>    -->
     </p>

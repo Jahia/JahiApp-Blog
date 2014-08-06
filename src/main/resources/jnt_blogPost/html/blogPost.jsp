@@ -22,7 +22,7 @@
 <jcr:nodeProperty node="${currentNode}" name="jcr:createdBy" var="createdBy"/>
 <jcr:nodeProperty node="${currentNode}" name="jcr:created" var="created"/>
 	
-<c:set var="curentUser" value="${user:lookupUser(createdBy.string)}"/>		
+<c:set var="currentUser" value="${user:lookupUser(createdBy.string)}"/>
 
 <fmt:formatDate value="${created.time}" type="date" pattern="dd" var="userCreatedDay"/>
 <fmt:formatDate value="${created.time}" type="date" pattern="MMM" var="userCreatedMonth"/>
@@ -61,9 +61,8 @@
     <div class="post-date"><span>${userCreatedMonth}</span>${userCreatedDay}</div>
     <h2 class="post-title"><c:out value="${title.string}"/></h2>
 
-    <jcr:node path="${curentUser.localPath}" var="contentUser"/>
-    <c:set var="fields" value="${contentUser.propertiesAsString}"/>
-    <p class="post-info"><fmt:message key="blog.label.by"/>&nbsp;${user:fullName(curentUser)}&nbsp;-&nbsp;<fmt:formatDate value="${created.time}" type="date" dateStyle="medium"/></p>
+    <c:set var="fields" value="${currentUser.propertiesAsString}"/>
+    <p class="post-info"><fmt:message key="blog.label.by"/>&nbsp;${user:fullName(currentUser)}&nbsp;-&nbsp;<fmt:formatDate value="${created.time}" type="date" dateStyle="medium"/></p>
     <ul class="post-tags">
         <jcr:nodeProperty node="${currentNode}" name="j:tagList" var="assignedTags"/>
         <c:forEach items="${assignedTags}" var="tag" varStatus="status">
