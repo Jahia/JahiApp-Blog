@@ -21,23 +21,35 @@ function deleteTag(tag) {
     }
 }
 
-function addTag(){
+function addTag(url){
     var $newTag = $(".addTag");
-    var values = $newTag.val().trim().toLowerCase().split(",");
-    if(values.length > 0){
-        var $ul = $('.post-tags');
-        for (var i = 0; i < values.length; i++) {
-            if(values[i] && values[i].trim().length > 0 && $('[data-tag="' + values[i].trim() + '"]').length == 0){
-                if($("#clearTag").length > 0){
-                    $("#clearTag").remove();
+    var options = {
+        url: url + ".transformTag.do",
+        type: "POST",
+        dataType: "json",
+        data: {tag: $newTag.val().split(',')},
+        traditional: true
+    };
+    $.ajax(options)
+        .done(function (result) {
+            if(result.tags){
+                var values = result.tags;
+                if(values.length > 0){
+                    var $ul = $('.post-tags');
+                    for (var i = 0; i < values.length; i++) {
+                        if(values[i] && values[i].trim().length > 0 && $('[data-tag="' + values[i].trim() + '"]').length == 0){
+                            if($("#clearTag").length > 0){
+                                $("#clearTag").remove();
+                            }
+                            var $li = $("<li></li>").text(values[i]);
+                            var $a = $("<a href='#' class='delete' onclick='deleteTag(this); return false;'></a>").attr('data-tag', values[i].trim());
+                            var $input = $("<input style='display: none' type='text' name='j:tagList'/>").attr('value', values[i].trim());
+                            $li.append($a).append($input);
+                            $ul.append($li);
+                        }
+                    }
+                    $newTag.val("")
                 }
-                var $li = $("<li></li>").text(values[i]);
-                var $a = $("<a href='#' class='delete' onclick='deleteTag(this); return false;'></a>").attr('data-tag', values[i].trim());
-                var $input = $("<input style='display: none' type='text' name='j:tagList'/>").attr('value', values[i].trim());
-                $li.append($a).append($input);
-                $ul.append($li);
             }
-        }
-        $newTag.val("")
-    }
+        });
 }

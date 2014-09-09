@@ -50,6 +50,7 @@
                         limit: 10,
                         q: extractLast( request.term )
                     },
+                    type: "POST",
                     success: function( data ) {
                         response( $.map( data.tags, function( item ) {
                             return {
@@ -116,7 +117,7 @@
 			<p>
                 <label><fmt:message key="blog.label.tag"/>:&nbsp;</label>
                 <input type="text" value="" style="width: 220px" class="addTag"/>
-                <input type="button" class="button" value="<fmt:message key='label.add'/>" onclick="addTag()"/>
+                <input type="button" class="button" value="<fmt:message key='label.add'/>" onclick="addTag('<c:url value="${url.base}${functions:escapePath(renderContext.mainResource.node.path)}"/>')"/>
             </p>
             <p>
                 <input class="button" type="submit" tabindex="16" value="<fmt:message key='label.save'/>"/>
