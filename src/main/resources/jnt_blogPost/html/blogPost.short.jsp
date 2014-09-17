@@ -44,7 +44,7 @@
     <ul class="post-tags">
         <jcr:nodeProperty node="${currentNode}" name="j:tagList" var="assignedTags"/>
         <c:forEach items="${assignedTags}" var="tag" varStatus="status">
-            <li>${tag.string}</li>
+            <li>${fn:escapeXml(tag.string)}</li>
         </c:forEach>
     </ul>
     <div class="post-resume">

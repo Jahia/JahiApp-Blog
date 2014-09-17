@@ -107,9 +107,9 @@
                 <ul class="post-tags">
                     <c:forEach items="${assignedTags}" var="tag" varStatus="status">
                         <li>
-                            ${tag.string}
-                            <a class="delete" data-tag="${tag.string}" href="#" onclick="deleteTag(this); return false;"></a>
-                            <input style="display: none" type="text" name="j:tagList" value="${tag.string}"/>
+                            ${fn:escapeXml(tag.string)}
+                            <a class="delete" data-tag="${fn:escapeXml(tag.string)}" href="#" onclick="deleteTag(this); return false;"></a>
+                            <input style="display: none" type="text" name="j:tagList" value="${fn:escapeXml(tag.string)}"/>
                         </li>
                     </c:forEach>
                 </ul>
