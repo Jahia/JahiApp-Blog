@@ -86,7 +86,7 @@
                 </p>
                 <p>
                     <label for="description"><fmt:message key="label.description"/>: </label>
-                    <textarea id="description" rows="10" cols="73" name="jcr:description"><c:out value='${pageNode.properties["jcr:description"].string}'/></textarea>
+                    <textarea id="description" rows="10" cols="73" style="width:95%"  name="jcr:description"><c:out value='${pageNode.properties["jcr:description"].string}'/></textarea>
                 </p>
                 <p>
                     <input
