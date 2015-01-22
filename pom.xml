@@ -72,103 +72,100 @@
         For more information, please visit http://www.jahia.com
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.jahia.modules</groupId>
+        <artifactId>jahia-modules</artifactId>
+        <version>7.1.0.0-SNAPSHOT</version>
+    </parent>
     <groupId>org.jahia.modules</groupId>
-    <artifactId>jahia-modules</artifactId>
-    <version>7.1.0.0-SNAPSHOT</version>
-  </parent>
-  <groupId>org.jahia.modules</groupId>
-  <artifactId>blog</artifactId>
-  <version>3.0.0-SNAPSHOT</version>
-  <packaging>bundle</packaging>
-  <name>Jahia Blog</name>
-  <description>This is a custom module for running on a Jahia server.</description>
-  <scm>
-    <connection>scm:git:git@github.com:Jahia/JahiApp-Blog.git</connection>
-    <developerConnection>https://github.com/Jahia/JahiApp-Blog</developerConnection>
-    <url>scm:git:git@github.com:Jahia/JahiApp-Blog.git</url>
-  </scm>
-  <distributionManagement>
-    <repository>
-      <id>jahia-releases</id>
-      <url>https://devtools.jahia.com/nexus/content/repositories/jahia-releases</url>
-    </repository>
-    <snapshotRepository>
-      <id>jahia-snapshots</id>
-      <url>https://devtools.jahia.com/nexus/content/repositories/jahia-snapshots</url>
-    </snapshotRepository>
-  </distributionManagement>
-  <repositories>
-    <repository>
-      <releases>
-        <enabled>true</enabled>
-        <updatePolicy>never</updatePolicy>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-      <id>jahia-public</id>
-      <name>Jahia Public Repository</name>
-      <url>https://devtools.jahia.com/nexus/content/groups/public</url>
-    </repository>
-  </repositories>
-  <build>
-    <plugins>
-      <plugin>
-        <artifactId>maven-site-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>attach-descriptor</id>
-            <goals>
-              <goal>attach-descriptor</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.felix</groupId>
-        <artifactId>maven-bundle-plugin</artifactId>
-        <extensions>true</extensions>
-        <configuration>
-          <instructions>
-            <Jahia-Depends>default,grid,calendar,facets,skins,default-skins,channels</Jahia-Depends>
-            <Jahia-Module-Type>jahiapp</Jahia-Module-Type>
-          </instructions>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-  <profiles>
-    <profile>
-      <id>eclipse-integration</id>
-      <build>
+    <artifactId>blog</artifactId>
+    <version>3.0.0-SNAPSHOT</version>
+    <packaging>bundle</packaging>
+    <name>Jahia Blog</name>
+    <description>This is a custom module for running on a Jahia server.</description>
+
+    <scm>
+        <connection>scm:git:git@github.com:Jahia/JahiApp-Blog.git</connection>
+        <developerConnection>https://github.com/Jahia/JahiApp-Blog</developerConnection>
+        <url>scm:git:git@github.com:Jahia/JahiApp-Blog.git</url>
+    </scm>
+
+    <properties>
+        <jahia-depends>default,grid,calendar,facets,skins,default-skins,channels</jahia-depends>
+        <jahia-module-type>jahiapp</jahia-module-type>
+    </properties>
+
+    <distributionManagement>
+        <repository>
+            <id>jahia-releases</id>
+            <url>https://devtools.jahia.com/nexus/content/repositories/jahia-releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>jahia-snapshots</id>
+            <url>https://devtools.jahia.com/nexus/content/repositories/jahia-snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+    <repositories>
+        <repository>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <id>jahia-public</id>
+            <name>Jahia Public Repository</name>
+            <url>https://devtools.jahia.com/nexus/content/groups/public</url>
+        </repository>
+    </repositories>
+    <build>
         <plugins>
-          <plugin>
-            <artifactId>maven-eclipse-plugin</artifactId>
-            <version>${eclipse.plugin.version}</version>
-            <configuration>
-              <wtpversion>1.5</wtpversion>
-              <additionalProjectnatures>
-                <projectnature>org.eclipse.wst.common.project.facet.core.nature</projectnature>
-                <projectnature>org.eclipse.wst.common.modulecore.ModuleCoreNature</projectnature>
-                <projectnature>org.eclipse.jem.workbench.JavaEMFNature</projectnature>
-              </additionalProjectnatures>
-              <additionalBuildcommands>
-                <buildCommand>
-                  <name>org.eclipse.wst.common.project.facet.core.builder</name>
-                  <arguments />
-                </buildCommand>
-                <buildCommand>
-                  <name>org.eclipse.wst.validation.validationbuilder</name>
-                  <arguments />
-                </buildCommand>
-              </additionalBuildcommands>
-            </configuration>
-          </plugin>
+            <plugin>
+                <artifactId>maven-site-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-descriptor</id>
+                        <goals>
+                            <goal>attach-descriptor</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
-      </build>
-    </profile>
-  </profiles>
+    </build>
+    <profiles>
+        <profile>
+            <id>eclipse-integration</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-eclipse-plugin</artifactId>
+                        <version>${eclipse.plugin.version}</version>
+                        <configuration>
+                            <wtpversion>1.5</wtpversion>
+                            <additionalProjectnatures>
+                                <projectnature>org.eclipse.wst.common.project.facet.core.nature</projectnature>
+                                <projectnature>org.eclipse.wst.common.modulecore.ModuleCoreNature</projectnature>
+                                <projectnature>org.eclipse.jem.workbench.JavaEMFNature</projectnature>
+                            </additionalProjectnatures>
+                            <additionalBuildcommands>
+                                <buildCommand>
+                                    <name>org.eclipse.wst.common.project.facet.core.builder</name>
+                                    <arguments/>
+                                </buildCommand>
+                                <buildCommand>
+                                    <name>org.eclipse.wst.validation.validationbuilder</name>
+                                    <arguments/>
+                                </buildCommand>
+                            </additionalBuildcommands>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
