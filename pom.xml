@@ -89,7 +89,7 @@
 
     <scm>
         <connection>scm:git:git@github.com:Jahia/JahiApp-Blog.git</connection>
-        <developerConnection>https://github.com/Jahia/JahiApp-Blog</developerConnection>
+        <developerConnection>scm:git:git@github.com:Jahia/JahiApp-Blog</developerConnection>
         <url>scm:git:git@github.com:Jahia/JahiApp-Blog.git</url>
     </scm>
 
