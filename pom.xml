@@ -72,17 +72,16 @@
         For more information, please visit http://www.jahia.com
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.jahia.modules</groupId>
         <artifactId>jahia-modules</artifactId>
-        <version>7.1.0.0-SNAPSHOT</version>
+        <version>7.1.0.0-RC</version>
     </parent>
     <groupId>org.jahia.modules</groupId>
     <artifactId>blog</artifactId>
-    <version>3.0.0-SNAPSHOT</version>
+    <version>3.0.0-RC</version>
     <packaging>bundle</packaging>
     <name>Jahia Blog</name>
     <description>This is a custom module for running on a Jahia server.</description>
@@ -91,7 +90,8 @@
         <connection>scm:git:git@github.com:Jahia/JahiApp-Blog.git</connection>
         <developerConnection>scm:git:git@github.com:Jahia/JahiApp-Blog</developerConnection>
         <url>scm:git:git@github.com:Jahia/JahiApp-Blog.git</url>
-    </scm>
+      <tag>3_0_0_RC</tag>
+  </scm>
 
     <properties>
         <jahia-depends>default,grid,calendar,facets,skins,default-skins,channels</jahia-depends>
@@ -155,11 +155,11 @@
                             <additionalBuildcommands>
                                 <buildCommand>
                                     <name>org.eclipse.wst.common.project.facet.core.builder</name>
-                                    <arguments/>
+                                    <arguments />
                                 </buildCommand>
                                 <buildCommand>
                                     <name>org.eclipse.wst.validation.validationbuilder</name>
-                                    <arguments/>
+                                    <arguments />
                                 </buildCommand>
                             </additionalBuildcommands>
                         </configuration>
