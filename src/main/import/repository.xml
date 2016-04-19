@@ -4,7 +4,7 @@
         <blog j:dependencies="calendar channels default default-skins facets grid skins"
             j:installedModules="blog"
             j:modulePriority="0"
-            j:moduleType="jahiapp"
+            j:moduleType="module"
             j:title="Jahia Blog"
             jcr:mixinTypes="jmix:hasExternalProviderExtension"
             jcr:primaryType="jnt:module">
