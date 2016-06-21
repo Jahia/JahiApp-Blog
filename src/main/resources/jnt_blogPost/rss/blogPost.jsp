@@ -8,9 +8,9 @@
 <jcr:nodeProperty node="${currentNode}" name="jcr:created" var="created"/>
 <jcr:nodeProperty node="${currentNode}" name="text" var="text"/>
 <item>
-    <title>${title.string}</title>
-    <link><c:url value='${url.base}${currentResource.node.path}.html'/> </link>
-    <description>${text.string}</description>
-    <pubDate>${created.time}</pubDate>
-    <dc:date>${created.time}</dc:date>
+    <title>${fn:escapeXml(title.string)}</title>
+    <link><c:url value="${url.server}${url.context}${url.base}${currentNode.path}.html" var="itemUrl"/>${fn:escapeXml(itemUrl)}</link>
+    <guid>${fn:escapeXml(itemUrl)}</guid>
+    <description>${functions:abbreviate(functions:removeHtmlTags(text.string),200,250,'...')}</description>
+    <pubDate><fmt:formatDate value="${created.date.time}" pattern="EEE, dd MMM yyyy HH:mm:ss Z"/></pubDate>
 </item>
