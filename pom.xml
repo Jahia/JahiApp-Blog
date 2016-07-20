@@ -62,7 +62,7 @@
         <connection>scm:git:git@github.com:Jahia/JahiApp-Blog.git</connection>
         <developerConnection>scm:git:git@github.com:Jahia/JahiApp-Blog</developerConnection>
         <url>scm:git:git@github.com:Jahia/JahiApp-Blog.git</url>
-      <tag>HEAD</tag>
+      <tag>3_x</tag>
   </scm>
 
     <properties>
