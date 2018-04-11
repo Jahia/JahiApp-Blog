@@ -27,8 +27,8 @@
         </c:otherwise>
     </c:choose>
 </c:if>
-<c:set var="canDelete" value="${jcr:hasPermission(renderContext.mainResource.node,'deleteBlog')}"/>
-<c:set var="canEdit" value="${jcr:hasPermission(renderContext.mainResource.node,'editBlog')}"/>
+<c:set var="canDelete" value="${jcr:hasPermission(renderContext.mainResource.node,'deleteBlog') && renderContext.readOnlyStatus eq 'OFF'}"/>
+<c:set var="canEdit" value="${jcr:hasPermission(renderContext.mainResource.node,'editBlog') && renderContext.readOnlyStatus eq 'OFF'}"/>
 
 <c:if test="${canDelete}">
 <template:tokenizedForm>

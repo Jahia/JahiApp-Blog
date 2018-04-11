@@ -33,8 +33,8 @@
     <c:set var="blogHome" value="${url.current}"/>
 </c:if>
 
-<c:set var="canDelete" value="${jcr:hasPermission(currentNode,'deleteBlogEntry')}"/>
-<c:set var="canEdit" value="${jcr:hasPermission(currentNode,'editBlogEntry')}"/>
+<c:set var="canDelete" value="${jcr:hasPermission(currentNode,'deleteBlogEntry') && renderContext.readOnlyStatus eq 'OFF'}"/>
+<c:set var="canEdit" value="${jcr:hasPermission(currentNode,'editBlogEntry') && renderContext.readOnlyStatus eq 'OFF'}"/>
 
 <c:if test="${canDelete}">
     <template:tokenizedForm>
