@@ -49,11 +49,11 @@
     <parent>
         <groupId>org.jahia.modules</groupId>
         <artifactId>jahia-modules</artifactId>
-        <version>7.2.3.0</version>
+        <version>8.0.0.0-SNAPSHOT</version>
     </parent>
     <groupId>org.jahia.modules</groupId>
     <artifactId>blog</artifactId>
-    <version>3.1.4-SNAPSHOT</version>
+    <version>4.0.0-SNAPSHOT</version>
     <packaging>bundle</packaging>
     <name>Jahia Blog</name>
     <description>This is a custom module for running on a Jahia server.</description>
@@ -67,6 +67,7 @@
 
     <properties>
         <jahia-depends>default,grid,calendar,facets,skins,default-skins,channels</jahia-depends>
+        <jahia-module-signature>MC0CFD8ZQTj9q9RL2khCnavBlTWSn6uVAhUAlFwklQIUHTibmkPLWJqO86VHj+U=</jahia-module-signature>
     </properties>
 
     <distributionManagement>
