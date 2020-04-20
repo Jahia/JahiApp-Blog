@@ -67,6 +67,7 @@
 
     <properties>
         <jahia-depends>default,grid,calendar,facets,skins,default-skins,channels</jahia-depends>
+        <jahia-module-signature>MC0CFD8ZQTj9q9RL2khCnavBlTWSn6uVAhUAlFwklQIUHTibmkPLWJqO86VHj+U=</jahia-module-signature>
     </properties>
 
     <distributionManagement>
