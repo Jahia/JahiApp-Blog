@@ -68,7 +68,7 @@
     <properties>
         <require-capability>osgi.extender;filter:="(osgi.extender=org.jahia.bundles.blueprint.extender.config)"</require-capability>
         <jahia-depends>default,grid,calendar,facets,skins,default-skins,channels</jahia-depends>
-        <jahia-module-signature>MC0CFD8ZQTj9q9RL2khCnavBlTWSn6uVAhUAlFwklQIUHTibmkPLWJqO86VHj+U=</jahia-module-signature>
+        <jahia-module-signature>MCwCFEVXxoQ5JcpglTHap+Bq/NIDgd4QAhQ3yZzevChfX2WsrnxloEJqWSAgyQ==</jahia-module-signature>
     </properties>
 
     <distributionManagement>
